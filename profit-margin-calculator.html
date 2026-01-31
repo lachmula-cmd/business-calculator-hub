@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit Margin Calculator - Business Calculator Hub</title>
+    <meta name="description" content="Calculate gross profit and profit margin percentage instantly.">
+    <link rel="stylesheet" href="assets/styles.css">
+    <!-- ADSENSE PLACEHOLDER: Paste your script here -->
+</head>
+
+<body>
+    <header>
+        <div class="container nav-flex">
+            <a href="index.html" class="logo">📊 Business Calculator Hub</a>
+            <nav class="footer-links" style="margin-bottom: 0;">
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Profit Margin Calculator</h1>
+
+        <div class="calculator-wrapper">
+            <div class="form-group">
+                <label for="currency">Currency</label>
+                <select id="currency">
+                    <option value="USD">USD ($)</option>
+                    <option value="EUR">EUR (€)</option>
+                    <option value="GBP">GBP (£)</option>
+                    <option value="CAD">CAD ($)</option>
+                    <option value="AUD">AUD ($)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="cost">Cost of Goods Sold (COGS)</label>
+                <div class="input-suffix">
+                    <input type="number" id="cost" placeholder="e.g., 50" min="0" step="0.01">
+                </div>
+                <small class="help-text">How much it costs you to produce the item.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="revenue">Revenue (Selling Price)</label>
+                <div class="input-suffix">
+                    <input type="number" id="revenue" placeholder="e.g., 100" min="0" step="0.01">
+                </div>
+                <small class="help-text">The price you sell the item for.</small>
+            </div>
+
+            <div class="btn-group">
+                <button id="reset-btn" class="btn btn-secondary">Reset</button>
+                <button id="share-btn" class="btn btn-secondary">Share this Calculator</button>
+            </div>
+
+            <div class="result-box">
+                <div class="result-title">Net Profit</div>
+                <div class="result-value" id="result-profit">-</div>
+
+                <div class="result-title" style="margin-top: 20px;">Profit Margin</div>
+                <div class="result-value" id="result-margin">-</div>
+
+                <button id="copy-btn" class="btn btn-primary" style="margin-top: 20px;">Copy Results</button>
+            </div>
+        </div>
+
+        <!-- Ad Placeholder -->
+        <div class="ad-placeholder">
+            <!-- ADSENSE PLACEHOLDER: MIDDLE BANNER -->
+            Advertisement
+        </div>
+
+        <section>
+            <h2>How to use this calculator</h2>
+            <ul>
+                <li><strong>Enter Cost:</strong> Input the total cost to produce or acquire your product/service.</li>
+                <li><strong>Enter Revenue:</strong> Input the final selling price.</li>
+                <li><strong>View Results:</strong> The calculator instantly updates your Profit in currency and your
+                    Margin as a percentage.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Frequently Asked Questions</h2>
+            <h3>What is Profit Margin?</h3>
+            <p>Profit margin is a ratio of a company's profit divided by its revenue. It measures how much of every
+                dollar of sales a company actually keeps in earnings.</p>
+
+            <h3>What is a good profit margin?</h3>
+            <p>A "good" margin varies by industry. For retail, 20% might be excellent, while for software (SaaS), 80% is
+                common. Generally, a 10% net profit margin is considered average, 20% is considered high, and 5% is low.
+            </p>
+
+            <h3>What is the difference between markup and margin?</h3>
+            <p>Markup is the percentage of the cost that you add to the cost price to get the selling price. Margin is
+                the percentage of the selling price that is profit.</p>
+        </section>
+
+        <section style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
+            <h3>Related Calculators</h3>
+            <div class="grid">
+                <div class="card">
+                    <h3>Markup Calculator</h3>
+                    <p>Determine price based on cost + percentage.</p>
+                    <a href="markup-calculator.html" class="btn-link">Go &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>Break-Even Calculator</h3>
+                    <p>Find out when you start making money.</p>
+                    <a href="break-even-calculator.html" class="btn-link">Go &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>Pricing Calculator</h3>
+                    <p>Calculate optimal price covering overheads.</p>
+                    <a href="pricing-calculator.html" class="btn-link">Go &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </div>
+            <p>&copy; <span id="current-year">2026</span> Business Calculator Hub. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="assets/utils.js"></script>
+    <script src="assets/calc-profit.js"></script>
+</body>
+
+</html>

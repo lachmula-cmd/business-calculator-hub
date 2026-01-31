@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAC Calculator - Business Calculator Hub</title>
+    <meta name="description" content="Calculate your Customer Acquisition Cost (CAC) to optimize marketing spend.">
+    <link rel="stylesheet" href="assets/styles.css">
+    <!-- ADSENSE PLACEHOLDER: Paste your script here -->
+</head>
+
+<body>
+    <header>
+        <div class="container nav-flex">
+            <a href="index.html" class="logo">📊 Business Calculator Hub</a>
+            <nav class="footer-links" style="margin-bottom: 0;">
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>CAC Calculator</h1>
+
+        <div class="calculator-wrapper">
+            <div class="form-group">
+                <label for="currency">Currency</label>
+                <select id="currency">
+                    <option value="USD">USD ($)</option>
+                    <option value="EUR">EUR (€)</option>
+                    <option value="GBP">GBP (£)</option>
+                    <option value="CAD">CAD ($)</option>
+                    <option value="AUD">AUD ($)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="spend">Total Sales & Marketing Spend</label>
+                <div class="input-suffix">
+                    <input type="number" id="spend" placeholder="Total spend in period" min="0">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="customers">New Customers Acquired</label>
+                <input type="number" id="customers" placeholder="Count of new customers" min="1">
+            </div>
+
+            <div class="btn-group">
+                <button id="reset-btn" class="btn btn-secondary">Reset</button>
+                <button id="share-btn" class="btn btn-secondary">Share this Calculator</button>
+            </div>
+
+            <div class="result-box">
+                <div class="result-title">Customer Acquisition Cost (CAC)</div>
+                <div class="result-value" id="result-cac">-</div>
+
+                <button id="copy-btn" class="btn btn-primary" style="margin-top: 20px;">Copy Results</button>
+            </div>
+        </div>
+
+        <div class="ad-placeholder">
+            <!-- ADSENSE PLACEHOLDER: MIDDLE BANNER -->
+            Advertisement
+        </div>
+
+        <section>
+            <h2>How to use</h2>
+            <ul>
+                <li>Pick a specific time period (e.g., last month).</li>
+                <li>Enter total money spent on sales and marketing in that period.</li>
+                <li>Enter the number of new customers gained in that same period.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>FAQ</h2>
+            <h3>What is CAC?</h3>
+            <p>Customer Acquisition Cost (CAC) is the total cost of acquiring a new customer, including all sales and
+                marketing costs.</p>
+
+            <h3>Why is it important?</h3>
+            <p>If your CAC is higher than your customer's Lifetime Value (LTV), your business effectively loses money
+                with every new customer.</p>
+        </section>
+
+        <section style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
+            <h3>Related Calculators</h3>
+            <div class="grid">
+                <div class="card">
+                    <h3>LTV Calculator</h3>
+                    <p>Calculate customer lifetime value.</p>
+                    <a href="ltv-calculator.html" class="btn-link">Go &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>ROI Calculator</h3>
+                    <p>Calculate return on investment.</p>
+                    <a href="roi-calculator.html" class="btn-link">Go &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </div>
+            <p>&copy; <span id="current-year">2026</span> Business Calculator Hub. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="assets/utils.js"></script>
+    <script src="assets/calc-cac.js"></script>
+</body>
+
+</html>

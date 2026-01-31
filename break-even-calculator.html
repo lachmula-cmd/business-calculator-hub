@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break-Even Calculator - Business Calculator Hub</title>
+    <meta name="description" content="Calculate your break-even point in units and revenue.">
+    <link rel="stylesheet" href="assets/styles.css">
+    <!-- ADSENSE PLACEHOLDER: Paste your script here -->
+</head>
+
+<body>
+    <header>
+        <div class="container nav-flex">
+            <a href="index.html" class="logo">📊 Business Calculator Hub</a>
+            <nav class="footer-links" style="margin-bottom: 0;">
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Break-Even Calculator</h1>
+
+        <div class="calculator-wrapper">
+            <div class="form-group">
+                <label for="currency">Currency</label>
+                <select id="currency">
+                    <option value="USD">USD ($)</option>
+                    <option value="EUR">EUR (€)</option>
+                    <option value="GBP">GBP (£)</option>
+                    <option value="CAD">CAD ($)</option>
+                    <option value="AUD">AUD ($)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="fixed-cost">Total Fixed Costs</label>
+                <input type="number" id="fixed-cost" placeholder="e.g., Rent, Salaries, Insurance" min="0">
+                <small class="help-text">Costs that don't change based on number of units sold.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Price per Unit</label>
+                <input type="number" id="price" placeholder="Selling price of one unit" min="0">
+            </div>
+
+            <div class="form-group">
+                <label for="variable-cost">Variable Cost per Unit</label>
+                <input type="number" id="variable-cost" placeholder="Cost to make one unit" min="0">
+                <small class="help-text">Materials, packaging, commissions, etc.</small>
+            </div>
+
+            <div class="btn-group">
+                <button id="reset-btn" class="btn btn-secondary">Reset</button>
+                <button id="share-btn" class="btn btn-secondary">Share this Calculator</button>
+            </div>
+
+            <div class="result-box">
+                <div class="result-title">Break-Even Units</div>
+                <div class="result-value" id="result-units">-</div>
+                <small class="result-detail">Units you need to sell</small>
+
+                <div class="result-title" style="margin-top: 20px;">Break-Even Revenue</div>
+                <div class="result-value" id="result-revenue">-</div>
+
+                <button id="copy-btn" class="btn btn-primary" style="margin-top: 20px;">Copy Results</button>
+            </div>
+        </div>
+
+        <div class="ad-placeholder">
+            <!-- ADSENSE PLACEHOLDER: MIDDLE BANNER -->
+            Advertisement
+        </div>
+
+        <section>
+            <h2>How to use</h2>
+            <ul>
+                <li><strong>Fixed Costs:</strong> Enter total monthly overhead expenses.</li>
+                <li><strong>Price per Unit:</strong> Enter the selling price of one product.</li>
+                <li><strong>Variable Cost:</strong> Enter costs directly tied to creating one product.</li>
+                <li>The results show exactly how many units you must sell to reach $0 profit (no loss).</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>FAQ</h2>
+            <h3>What is Break-Even Point?</h3>
+            <p>The break-even point is where total costs and total revenue are equal. You are not making a profit, but
+                you are not losing money ("in the red").</p>
+
+            <h3>Why is this important?</h3>
+            <p>It tells you the minimum performance required to survive. Any sales above the break-even units contribute
+                directly to profit.</p>
+        </section>
+
+        <section style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
+            <h3>Related Calculators</h3>
+            <div class="grid">
+                <div class="card">
+                    <h3>ROI Calculator</h3>
+                    <p>Calculate return on investment.</p>
+                    <a href="roi-calculator.html" class="btn-link">Go &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>Pricing Calculator</h3>
+                    <p>Set prices to ensure profit.</p>
+                    <a href="pricing-calculator.html" class="btn-link">Go &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </div>
+            <p>&copy; <span id="current-year">2026</span> Business Calculator Hub. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="assets/utils.js"></script>
+    <script src="assets/calc-breakeven.js"></script>
+</body>
+
+</html>

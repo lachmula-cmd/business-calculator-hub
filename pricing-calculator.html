@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Pricing Calculator - Business Calculator Hub</title>
+    <meta name="description"
+        content="Calculate the optimal selling price for your product including overhead coverage and desired profit margin.">
+    <link rel="stylesheet" href="assets/styles.css">
+    <!-- ADSENSE PLACEHOLDER: Paste your script here -->
+</head>
+
+<body>
+    <header>
+        <div class="container nav-flex">
+            <a href="index.html" class="logo">📊 Business Calculator Hub</a>
+            <nav class="footer-links" style="margin-bottom: 0;">
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Pricing Calculator</h1>
+        <p>Determine the right price to cover all costs (COGS + Overhead) and hit your profit goals.</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-group">
+                <label for="currency">Currency</label>
+                <select id="currency">
+                    <option value="USD">USD ($)</option>
+                    <option value="EUR">EUR (€)</option>
+                    <option value="GBP">GBP (£)</option>
+                    <option value="CAD">CAD ($)</option>
+                    <option value="AUD">AUD ($)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="unit-cost">Unit Cost (COGS)</label>
+                <input type="number" id="unit-cost" placeholder="Direct material & labor cost per item" min="0">
+            </div>
+
+            <div class="form-group">
+                <label for="overhead">Monthly Overhead</label>
+                <input type="number" id="overhead" placeholder="Fixed costs (Rent, Salaries, Software)" min="0">
+            </div>
+
+            <div class="form-group">
+                <label for="expected-units">Expected Units Sold per Month</label>
+                <input type="number" id="expected-units" placeholder="e.g., 100" min="1">
+                <small class="help-text">Used to distribute overhead costs per unit.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="margin">Desired Profit Margin (%)</label>
+                <input type="number" id="margin" placeholder="e.g., 30" min="0" max="99.9">
+                <small class="help-text">How much profit you want to make on each sale (0-99%).</small>
+            </div>
+
+            <div class="btn-group">
+                <button id="reset-btn" class="btn btn-secondary">Reset</button>
+                <button id="share-btn" class="btn btn-secondary">Share this Calculator</button>
+            </div>
+
+            <div id="error-msg"
+                style="display:none; color: #dc3545; background: #ffe6e6; padding: 10px; border-radius: 4px; margin-bottom: 15px;">
+            </div>
+
+            <div class="result-box">
+                <div class="result-title">Recommended Price</div>
+                <div class="result-value" id="result-price">-</div>
+
+                <div style="margin-top: 20px; font-size: 0.9rem; color: #555; text-align: left;">
+                    <div><strong>Breakdown:</strong></div>
+                    <div style="display: flex; justify-content: space-between; margin-top: 5px;">
+                        <span>Unit Cost:</span> <span id="detail-unit-cost">-</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span>Overhead per Unit:</span> <span id="detail-overhead">-</span>
+                    </div>
+                    <div
+                        style="display: flex; justify-content: space-between; border-top: 1px solid #ddd; padding-top: 2px; margin-top: 2px;">
+                        <span>Total Cost per Unit:</span> <span id="detail-total-cost">-</span>
+                    </div>
+                </div>
+
+                <button id="copy-btn" class="btn btn-primary" style="margin-top: 20px;">Copy Results</button>
+            </div>
+        </div>
+
+        <div class="ad-placeholder">
+            <!-- ADSENSE PLACEHOLDER: MIDDLE BANNER -->
+            Advertisement
+        </div>
+
+        <section>
+            <h2>How to use</h2>
+            <ul>
+                <li><strong>Unit Cost:</strong> Direct cost to make one product.</li>
+                <li><strong>Overhead:</strong> Total fixed monthly expenses.</li>
+                <li><strong>Expected Units:</strong> Conservative estimate of monthly sales volume.</li>
+                <li><strong>Desired Margin:</strong> The percentage of the final price that should be pure profit.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Theory</h2>
+            <p>This calculator ensures you don't underprice by forgetting overheads. It calculates the "Total Cost per
+                Unit" first, then applies the margin formula.</p>
+            <p><code>Price = TotalCostPerUnit / (1 - Margin%)</code></p>
+        </section>
+
+        <section style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
+            <h3>Related Calculators</h3>
+            <div class="grid">
+                <div class="card">
+                    <h3>Markup Calculator</h3>
+                    <p>Simple cost to price markup.</p>
+                    <a href="markup-calculator.html" class="btn-link">Go &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>Profit Margin Calculator</h3>
+                    <p>Verify your final margins.</p>
+                    <a href="profit-margin-calculator.html" class="btn-link">Go &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </div>
+            <p>&copy; <span id="current-year">2026</span> Business Calculator Hub. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="assets/utils.js"></script>
+    <script src="assets/calc-pricing.js"></script>
+</body>
+
+</html>

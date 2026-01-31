@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markup Calculator - Business Calculator Hub</title>
+    <meta name="description" content="Calculate the markup percentage on your products to set profitable prices.">
+    <link rel="stylesheet" href="assets/styles.css">
+    <!-- ADSENSE PLACEHOLDER: Paste your script here -->
+</head>
+
+<body>
+    <header>
+        <div class="container nav-flex">
+            <a href="index.html" class="logo">📊 Business Calculator Hub</a>
+            <nav class="footer-links" style="margin-bottom: 0;">
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Markup Calculator</h1>
+
+        <div class="calculator-wrapper">
+            <div class="form-group">
+                <label for="currency">Currency</label>
+                <select id="currency">
+                    <option value="USD">USD ($)</option>
+                    <option value="EUR">EUR (€)</option>
+                    <option value="GBP">GBP (£)</option>
+                    <option value="CAD">CAD ($)</option>
+                    <option value="AUD">AUD ($)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="cost">Cost per Unit</label>
+                <div class="input-suffix">
+                    <input type="number" id="cost" placeholder="e.g., 50" min="0" step="0.01">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Selling Price</label>
+                <div class="input-suffix">
+                    <input type="number" id="price" placeholder="e.g., 75" min="0" step="0.01">
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button id="reset-btn" class="btn btn-secondary">Reset</button>
+                <button id="share-btn" class="btn btn-secondary">Share this Calculator</button>
+            </div>
+
+            <div class="result-box">
+                <div class="result-title">Markup Percentage</div>
+                <div class="result-value" id="result-markup">-</div>
+
+                <div class="result-title" style="margin-top: 20px;">Profit per Unit</div>
+                <div class="result-value" id="result-profit">-</div>
+
+                <button id="copy-btn" class="btn btn-primary" style="margin-top: 20px;">Copy Results</button>
+            </div>
+        </div>
+
+        <!-- Ad Placeholder -->
+        <div class="ad-placeholder">
+            <!-- ADSENSE PLACEHOLDER: MIDDLE BANNER -->
+            Advertisement
+        </div>
+
+        <section>
+            <h2>How to use</h2>
+            <ul>
+                <li>Enter the cost to acquire or produce one unit.</li>
+                <li>Enter the final selling price.</li>
+                <li>The calculator will show you the markup percentage you are applying.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>FAQ</h2>
+            <h3>How is Markup Calculated?</h3>
+            <p>The formula is: <code>((Selling Price - Cost) / Cost) * 100</code>.</p>
+
+            <h3>Difference between Markup and Gross Margin?</h3>
+            <p>Markup is calculated based on cost. Gross Margin is calculated based on revenue (selling price). A 50%
+                markup results in a 33% gross profit margin.</p>
+        </section>
+
+        <section style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
+            <h3>Related Calculators</h3>
+            <div class="grid">
+                <div class="card">
+                    <h3>Profit Margin Calculator</h3>
+                    <p>Calculate percentage of price that is profit.</p>
+                    <a href="profit-margin-calculator.html" class="btn-link">Go &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>Pricing Calculator</h3>
+                    <p>Set prices based on margin goals.</p>
+                    <a href="pricing-calculator.html" class="btn-link">Go &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </div>
+            <p>&copy; <span id="current-year">2026</span> Business Calculator Hub. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="assets/utils.js"></script>
+    <script src="assets/calc-markup.js"></script>
+</body>
+
+</html>
