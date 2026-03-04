@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markup Calculator - Business Calculator Hub</title>
-    <meta name="description" content="Calculate the markup percentage on your products to set profitable prices.">
+    <title>Markup Calculator — Calculate Markup Percentage & Profit Per Unit | Business Calculator Hub</title>
+    <meta name="description" content="Calculate the markup percentage on any product instantly. Enter your cost and selling price to see your markup % and profit per unit. Understand the difference between markup and margin.">
     <link rel="stylesheet" href="assets/styles.css">
-    <!-- ADSENSE PLACEHOLDER: Paste your script here -->
+    <link rel="stylesheet" href="assets/styles-extra.css">
+    <!-- ADSENSE PLACEHOLDER: Paste your AdSense script tag here -->
 </head>
-
 <body>
     <header>
         <div class="container nav-flex">
-            <a href="index.html" class="logo">📊 Business Calculator Hub</a>
-            <nav class="footer-links" style="margin-bottom: 0;">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">
+                    <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="1" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.9"/>
+                        <rect x="11" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                        <rect x="1" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                        <rect x="11" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.5"/>
+                    </svg>
+                </span>
+                <span>
+                    <span class="logo-name">Business Calculator Hub</span>
+                    <span class="logo-sub">Free Finance Tools</span>
+                </span>
+            </a>
+            <nav class="nav-links">
+                <a href="guides/index.html">Guides</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
             </nav>
@@ -23,6 +36,7 @@
 
     <main class="container">
         <h1>Markup Calculator</h1>
+        <p class="page-intro">Markup is the amount you add to the cost of a product to arrive at its selling price. It's expressed as a percentage of the cost — which is the key distinction from profit margin, which is expressed as a percentage of the selling price. Confusing the two is one of the most common and costly pricing mistakes in business. This calculator shows you exactly what markup you're applying and how much profit you're making per unit.</p>
 
         <div class="calculator-wrapper">
             <div class="form-group">
@@ -41,6 +55,7 @@
                 <div class="input-suffix">
                     <input type="number" id="cost" placeholder="e.g., 50" min="0" step="0.01">
                 </div>
+                <small class="help-text">What it costs you to produce or acquire one unit — materials, labour, and direct costs.</small>
             </div>
 
             <div class="form-group">
@@ -48,6 +63,7 @@
                 <div class="input-suffix">
                     <input type="number" id="price" placeholder="e.g., 75" min="0" step="0.01">
                 </div>
+                <small class="help-text">The price you charge the customer for one unit.</small>
             </div>
 
             <div class="btn-group">
@@ -66,63 +82,199 @@
             </div>
         </div>
 
-        <!-- Ad Placeholder -->
+        <!-- Ad Unit -->
         <div class="ad-placeholder">
-            <!-- ADSENSE PLACEHOLDER: MIDDLE BANNER -->
-            Advertisement
+            <!-- ADSENSE PLACEHOLDER: MIDDLE BANNER AD UNIT -->
         </div>
 
         <section>
-            <h2>How to use</h2>
+            <h2>What Is Markup?</h2>
+            <p>Markup is the difference between the cost of a product and its selling price, expressed as a percentage of the <em>cost</em>. It answers the question: "How much am I adding on top of what I paid?"</p>
+            <p>Markup is commonly used in wholesale and retail pricing, where a business buys goods at a cost price and needs to set a retail price that covers overhead and generates profit. It's also used in manufacturing and service businesses to price work based on a cost-plus model.</p>
+            <p>The critical thing to understand is that markup and profit margin are <strong>not the same number</strong>. A 50% markup does not mean a 50% profit margin. Understanding this distinction is essential for accurate pricing.</p>
+        </section>
+
+        <section>
+            <h2>How It Works</h2>
+            <p>Enter your unit cost (what you pay to produce or acquire the item) and your selling price (what you charge the customer). The calculator will show you:</p>
             <ul>
-                <li>Enter the cost to acquire or produce one unit.</li>
-                <li>Enter the final selling price.</li>
-                <li>The calculator will show you the markup percentage you are applying.</li>
+                <li><strong>Markup Percentage:</strong> How much you've added on top of cost, as a percentage of cost</li>
+                <li><strong>Profit per Unit:</strong> The absolute profit in currency terms for each unit sold</li>
+            </ul>
+            <p>Results update instantly as you type. You can also use this calculator in reverse — if you know your desired markup percentage, use the <a href="pricing-calculator.html">Pricing Calculator</a> to work out what selling price to set.</p>
+        </section>
+
+        <section>
+            <h2>Formula</h2>
+            <div class="formula-box">
+                <strong>Profit per Unit</strong>
+                Profit = Selling Price − Cost per Unit
+            </div>
+            <div class="formula-box">
+                <strong>Markup Percentage Formula</strong>
+                Markup % = (Profit ÷ Cost per Unit) × 100
+            </div>
+        </section>
+
+        <section>
+            <h2>Example Calculation</h2>
+            <div class="example-box">
+                <strong>Worked Example</strong>
+                <p>You purchase a product from a supplier for <strong>$40</strong> per unit and sell it for <strong>$60</strong>.</p>
+                <p>Profit per Unit = $60 − $40 = <strong>$20</strong></p>
+                <p>Markup % = ($20 ÷ $40) × 100 = <strong>50%</strong></p>
+                <p>Note: This 50% markup results in a profit margin of only 33.3% — because margin is calculated on the selling price ($20 ÷ $60), not the cost.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>When to Use This Calculator</h2>
+            <ul>
+                <li><strong>When setting retail prices from a wholesale cost</strong> — you know what you paid and need to decide what to charge</li>
+                <li><strong>When working with a cost-plus pricing model</strong> — where you add a standard percentage on top of cost for all products</li>
+                <li><strong>When checking an existing price</strong> — to verify what markup you're currently applying and whether it's consistent across your range</li>
+                <li><strong>When negotiating with suppliers</strong> — understanding your current markup helps you evaluate the impact of a cost change</li>
+                <li><strong>When comparing your pricing to industry norms</strong> — different industries have standard markup expectations (e.g., retail clothing often uses 100–200% markup)</li>
             </ul>
         </section>
 
         <section>
-            <h2>FAQ</h2>
-            <h3>How is Markup Calculated?</h3>
-            <p>The formula is: <code>((Selling Price - Cost) / Cost) * 100</code>.</p>
-
-            <h3>Difference between Markup and Gross Margin?</h3>
-            <p>Markup is calculated based on cost. Gross Margin is calculated based on revenue (selling price). A 50%
-                markup results in a 33% gross profit margin.</p>
+            <h2>Common Mistakes</h2>
+            <ul>
+                <li><strong>Confusing markup with margin.</strong> This is the most common mistake. A 50% markup gives you a 33.3% margin. A 100% markup gives you a 50% margin. They are never the same number (except at 0%). Always be clear about which one you're using when discussing pricing.</li>
+                <li><strong>Applying markup to the wrong base.</strong> Markup is always calculated on cost. If you accidentally calculate it on the selling price, you're calculating margin — and you'll end up underpricing.</li>
+                <li><strong>Not including all costs in the "cost" figure.</strong> If your cost figure only includes materials but not direct labour or packaging, your markup will look higher than it really is. Make sure your cost figure reflects the true total cost to produce or acquire one unit.</li>
+                <li><strong>Using the same markup for all products regardless of overhead.</strong> Some products require more storage, handling, or support than others. A flat markup across all products may mean some are profitable and others are not.</li>
+            </ul>
         </section>
 
-        <section style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
+        <section>
+            <h2>How to Interpret Your Result</h2>
+            <p>Markup percentages vary widely by industry. Here are some general benchmarks:</p>
+            <ul>
+                <li><strong>Grocery and food retail:</strong> 5–25% markup (very thin margins, high volume)</li>
+                <li><strong>General retail:</strong> 50–100% markup is common</li>
+                <li><strong>Clothing and apparel:</strong> 100–300% markup is typical</li>
+                <li><strong>Electronics:</strong> 10–30% markup (competitive market, lower margins)</li>
+                <li><strong>Jewellery:</strong> 100–400% markup</li>
+                <li><strong>Restaurants:</strong> 200–500% markup on food items</li>
+                <li><strong>Software and digital products:</strong> Very high markup due to near-zero marginal cost</li>
+            </ul>
+            <p>Your markup needs to be high enough that after covering overhead (rent, salaries, utilities, marketing), you still have a net profit. Use the <a href="pricing-calculator.html">Pricing Calculator</a> to factor in overhead when setting prices.</p>
+
+            <div class="info-box">
+                <strong>💡 Markup vs. Margin Quick Reference</strong>
+                A 25% markup = 20% margin | A 50% markup = 33.3% margin | A 100% markup = 50% margin | A 200% markup = 66.7% margin
+            </div>
+        </section>
+
+        <section>
+            <h2>Frequently Asked Questions</h2>
+
+            <h3>What is the difference between markup and profit margin?</h3>
+            <p>Markup is the percentage added to cost to get the selling price. Margin is the percentage of the selling price that is profit. They use different bases: markup uses cost, margin uses revenue. A product with a $50 cost and $75 selling price has a 50% markup but a 33.3% margin. Always specify which one you mean when discussing pricing with your team or accountant.</p>
+
+            <h3>How do I calculate the selling price from a desired markup?</h3>
+            <p>Multiply your cost by (1 + markup percentage). For example, if your cost is $40 and you want a 75% markup: $40 × 1.75 = $70 selling price. Alternatively, use the <a href="pricing-calculator.html">Pricing Calculator</a> which also factors in overhead.</p>
+
+            <h3>What markup do I need to achieve a specific profit margin?</h3>
+            <p>Use this formula: Markup % = Margin % ÷ (1 − Margin %). For example, to achieve a 40% margin, you need a markup of 40% ÷ 60% = 66.7%. This is a useful conversion when you know your target margin but need to express it as a markup for pricing purposes.</p>
+
+            <h3>Is a higher markup always better?</h3>
+            <p>Not necessarily. A higher markup means more profit per unit, but if your price becomes uncompetitive, you'll sell fewer units. The optimal markup balances profitability with market demand. In competitive markets, you may need to accept a lower markup and compensate with volume or cost reduction.</p>
+
+            <h3>Should I use the same markup for all my products?</h3>
+            <p>A flat markup is simple but not always optimal. Products with higher overhead (more storage space, more customer support, higher return rates) should carry a higher markup to reflect their true cost. Consider using a cost-plus model that accounts for overhead allocation, as the <a href="pricing-calculator.html">Pricing Calculator</a> does.</p>
+        </section>
+
+        <p class="disclaimer-note">Disclaimer: This calculator provides estimates for informational purposes only. Results are based on the inputs you provide and should not be used as a substitute for professional financial or pricing advice.</p>
+
+        <hr class="section-divider">
+
+        <section>
             <h3>Related Calculators</h3>
             <div class="grid">
                 <div class="card">
                     <h3>Profit Margin Calculator</h3>
-                    <p>Calculate percentage of price that is profit.</p>
-                    <a href="profit-margin-calculator.html" class="btn-link">Go &rarr;</a>
+                    <p>Calculate the percentage of your selling price that is profit — the margin perspective on the same numbers.</p>
+                    <a href="profit-margin-calculator.html" class="btn-link">Calculate Margin &rarr;</a>
                 </div>
                 <div class="card">
                     <h3>Pricing Calculator</h3>
-                    <p>Set prices based on margin goals.</p>
-                    <a href="pricing-calculator.html" class="btn-link">Go &rarr;</a>
+                    <p>Set a selling price that covers unit costs, overhead, and delivers your target profit margin.</p>
+                    <a href="pricing-calculator.html" class="btn-link">Set Your Price &rarr;</a>
                 </div>
             </div>
         </section>
 
+        <section>
+            <h3>Related Guides</h3>
+            <ul>
+                <li><a href="guides/profit-margin-vs-markup.html">Profit Margin vs. Markup: What's the Difference?</a></li>
+                <li><a href="guides/common-pricing-mistakes.html">5 Common Pricing Mistakes Small Businesses Make</a></li>
+            </ul>
+        </section>
     </main>
 
     <footer>
         <div class="container">
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Use</a>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="margin-bottom:16px;display:inline-flex;">
+                        <span class="logo-icon">
+                            <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="1" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.9"/>
+                                <rect x="11" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                                <rect x="1" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                                <rect x="11" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.5"/>
+                            </svg>
+                        </span>
+                        <span>
+                            <span class="logo-name">Business Calculator Hub</span>
+                            <span class="logo-sub">Free Finance Tools</span>
+                        </span>
+                    </a>
+                    <p>Free, accurate business calculators for entrepreneurs and small business owners.</p>
+                </div>
+                <div class="footer-nav">
+                    <div class="footer-col">
+                        <h4>Calculators</h4>
+                        <a href="profit-margin-calculator.html">Profit Margin</a>
+                        <a href="markup-calculator.html">Markup</a>
+                        <a href="pricing-calculator.html">Pricing</a>
+                        <a href="break-even-calculator.html">Break-Even</a>
+                        <a href="cac-calculator.html">CAC</a>
+                        <a href="ltv-calculator.html">LTV</a>
+                        <a href="roi-calculator.html">ROI</a>
+                        <a href="payback-period-calculator.html">Payback Period</a>
+                        <a href="churn-impact-calculator.html">Churn Impact</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <a href="guides/index.html">All Guides</a>
+                        <a href="guides/profit-margin-vs-markup.html">Margin vs Markup</a>
+                        <a href="guides/how-to-calculate-break-even.html">Break-Even Guide</a>
+                        <a href="guides/what-is-cac.html">What Is CAC?</a>
+                        <a href="guides/how-to-estimate-roi.html">Estimating ROI</a>
+                        <a href="guides/common-pricing-mistakes.html">Pricing Mistakes</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <a href="about.html">About</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Use</a>
+                        <a href="disclaimer.html">Disclaimer</a>
+                    </div>
+                </div>
             </div>
-            <p>&copy; <span id="current-year">2026</span> Business Calculator Hub. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2026</span> Business Calculator Hub. All rights reserved.</p>
+                <p>For informational purposes only. Not professional financial advice.</p>
+            </div>
         </div>
     </footer>
     <script src="assets/utils.js"></script>
     <script src="assets/calc-markup.js"></script>
 </body>
-
 </html>

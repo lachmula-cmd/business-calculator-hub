@@ -1,0 +1,135 @@
+/* BUSINESS CALCULATOR HUB — Design System v2.0 — Part 2: Components */
+
+/* === ABOUT PAGE === */
+.about-grid {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:var(--spacing-lg); margin:var(--spacing-xl) 0;
+}
+.about-feature {
+  padding:var(--spacing-xl); background:var(--bg-color); border-radius:var(--radius-lg);
+  border:1px solid var(--border-color); box-shadow:var(--shadow-sm);
+  transition:transform var(--transition),box-shadow var(--transition),border-color var(--transition);
+}
+.about-feature:hover { transform:translateY(-3px); box-shadow:var(--shadow-md); border-color:var(--border-medium); }
+.about-feature .feature-icon { font-size:1.8rem; margin-bottom:var(--spacing-md); }
+.about-feature h3 { margin-top:0; font-size:1rem; }
+
+/* === CONTACT PAGE === */
+.contact-reasons {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  gap:var(--spacing-md); margin:var(--spacing-lg) 0;
+}
+.contact-reason {
+  padding:var(--spacing-lg); background:var(--bg-color); border-radius:var(--radius-lg);
+  border:1px solid var(--border-color); font-size:0.9rem; box-shadow:var(--shadow-xs);
+  transition:border-color var(--transition-fast),box-shadow var(--transition-fast);
+}
+.contact-reason:hover { border-color:var(--border-medium); box-shadow:var(--shadow-sm); }
+.contact-reason strong { display:block; margin-bottom:6px; color:var(--primary-color); font-weight:600; }
+
+/* === FOOTER === */
+footer {
+  background:#0a0618; color:rgba(255,255,255,0.5);
+  padding:var(--spacing-3xl) 0 var(--spacing-xl); margin-top:auto;
+  border-top:1px solid rgba(124,58,237,0.2); font-size:0.875rem;
+}
+.footer-top {
+  display:grid; grid-template-columns:280px 1fr; gap:var(--spacing-3xl);
+  padding-bottom:var(--spacing-2xl);
+  border-bottom:1px solid rgba(255,255,255,0.07);
+  margin-bottom:var(--spacing-xl);
+  align-items:start;
+}
+.footer-brand .logo { color:#fff; margin-bottom:var(--spacing-md); }
+.footer-brand .logo-name { color:#fff; }
+.footer-brand .logo-sub { color:rgba(255,255,255,0.4); }
+.footer-brand p {
+  font-size:0.85rem; color:rgba(255,255,255,0.45); line-height:1.65;
+  margin-bottom:0; max-width:240px;
+}
+.footer-nav { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--spacing-xl); }
+.footer-col h4 {
+  font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em;
+  color:rgba(255,255,255,0.7); margin-bottom:var(--spacing-md); margin-top:0;
+}
+.footer-col a {
+  display:block; color:rgba(255,255,255,0.45); text-decoration:none; font-size:0.85rem;
+  padding:3px 0; transition:color var(--transition-fast); line-height:1.6;
+}
+.footer-col a:hover { color:rgba(255,255,255,0.85); text-decoration:none; }
+.footer-bottom {
+  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;
+  gap:var(--spacing-sm);
+}
+.footer-bottom p { margin-bottom:0; font-size:0.8rem; color:rgba(255,255,255,0.35); }
+
+/* Legacy footer-links (used in some pages) */
+.footer-links {
+  display:flex; gap:var(--spacing-md); margin-bottom:var(--spacing-md); flex-wrap:wrap;
+}
+.footer-links a { color:rgba(255,255,255,0.45); text-decoration:none; font-size:0.85rem; transition:color var(--transition-fast); }
+.footer-links a:hover { color:rgba(255,255,255,0.85); text-decoration:none; }
+
+/* === HOW-TO SECTION (homepage) === */
+.how-to-section {
+  background:var(--bg-color); border-radius:var(--radius-xl); padding:var(--spacing-2xl);
+  margin:var(--spacing-2xl) 0; border:1px solid var(--border-color); box-shadow:var(--shadow-sm);
+}
+.how-to-section h2 { margin-top:0; }
+.how-to-section ol { padding-left:var(--spacing-xl); }
+.how-to-section li { margin-bottom:var(--spacing-md); color:var(--text-secondary); line-height:1.65; }
+
+/* === WHY SECTION (homepage) === */
+.why-section { margin:var(--spacing-2xl) 0; }
+.why-section h2 { margin-top:0; }
+
+/* === CTA BOX (about page) === */
+.cta-box {
+  margin-top:var(--spacing-2xl); padding:var(--spacing-2xl);
+  background:linear-gradient(135deg,var(--purple-50) 0%,#ede9fe 100%);
+  border-radius:var(--radius-xl); border:1px solid var(--border-medium);
+}
+.cta-box h2 { margin-top:0; color:var(--primary-color); }
+.cta-box p { margin-bottom:var(--spacing-lg); }
+
+/* === RESPONSIVE === */
+@media (max-width:900px) {
+  .trust-strip { grid-template-columns:repeat(2,1fr); }
+  .trust-item:nth-child(2) { border-right:none; }
+  .trust-item:nth-child(3) { border-top:1px solid var(--border-subtle); }
+  .trust-item:nth-child(4) { border-top:1px solid var(--border-subtle); border-right:none; }
+  .footer-top { grid-template-columns:1fr; gap:var(--spacing-2xl); }
+  .footer-nav { grid-template-columns:repeat(2,1fr); }
+}
+
+@media (max-width:700px) {
+  :root { --spacing-3xl:48px; }
+  .container { padding:0 var(--spacing-md); }
+  main { padding:var(--spacing-2xl) 0; }
+  h1 { font-size:1.75rem; }
+  h2 { font-size:1.25rem; }
+  .hero-section { padding:60px var(--spacing-md) 52px; }
+  .hero-section h1 { font-size:clamp(1.75rem,6vw,2.4rem); }
+  .hero-sub { font-size:0.95rem; }
+  .hero-cta { flex-direction:column; align-items:center; }
+  .hero-cta .btn { width:100%; max-width:320px; }
+  .trust-strip { grid-template-columns:1fr; }
+  .trust-item { border-right:none; border-bottom:1px solid var(--border-subtle); }
+  .trust-item:last-child { border-bottom:none; }
+  .grid { grid-template-columns:1fr; }
+  .btn-group { flex-direction:column; width:100%; }
+  .btn-group .btn { width:100%; }
+  .calculator-wrapper { padding:var(--spacing-lg); }
+  .result-value { font-size:2.2rem; }
+  .footer-nav { grid-template-columns:1fr; }
+  .footer-bottom { flex-direction:column; align-items:flex-start; }
+  .nav-flex { height:58px; }
+  .logo-sub { display:none; }
+}
+
+@media (max-width:480px) {
+  .hero-badges { gap:6px; }
+  .hero-badge { font-size:0.72rem; padding:4px 10px; }
+  .about-grid { grid-template-columns:1fr; }
+  .contact-reasons { grid-template-columns:1fr; }
+}

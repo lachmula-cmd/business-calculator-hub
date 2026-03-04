@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Churn Impact Calculator - Business Calculator Hub</title>
-    <meta name="description" content="Visualize how customer churn hurts your growth with a 12-month projection table.">
+    <title>Churn Impact Calculator — 12-Month Customer Churn Projection | Business Calculator Hub</title>
+    <meta name="description" content="Visualise how customer churn affects your business over 12 months. Enter your starting customers, monthly churn rate, and new customer acquisition to see a month-by-month projection table.">
     <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/styles-extra.css">
     <style>
         .churn-table {
             width: 100%;
@@ -14,31 +14,46 @@
             margin-top: 20px;
             font-size: 0.9rem;
         }
-
         .churn-table th,
         .churn-table td {
             border: 1px solid var(--border-color);
             padding: 8px 12px;
             text-align: right;
         }
-
         .churn-table th {
             background-color: var(--secondary-color);
             text-align: center;
+            font-weight: 600;
         }
-
         .churn-table tr:nth-child(even) {
             background-color: #fcfcfc;
         }
+        .churn-table td:first-child {
+            text-align: center;
+            font-weight: 600;
+        }
     </style>
-    <!-- ADSENSE PLACEHOLDER: Paste your script here -->
+    <!-- ADSENSE PLACEHOLDER: Paste your AdSense script tag here -->
 </head>
-
 <body>
     <header>
         <div class="container nav-flex">
-            <a href="index.html" class="logo">📊 Business Calculator Hub</a>
-            <nav class="footer-links" style="margin-bottom: 0;">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">
+                    <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="1" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.9"/>
+                        <rect x="11" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                        <rect x="1" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                        <rect x="11" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.5"/>
+                    </svg>
+                </span>
+                <span>
+                    <span class="logo-name">Business Calculator Hub</span>
+                    <span class="logo-sub">Free Finance Tools</span>
+                </span>
+            </a>
+            <nav class="nav-links">
+                <a href="guides/index.html">Guides</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
             </nav>
@@ -47,25 +62,25 @@
 
     <main class="container">
         <h1>Churn Impact Calculator</h1>
+        <p class="page-intro">Churn is the silent killer of subscription and recurring revenue businesses. Even a modest monthly churn rate can erode your customer base faster than you might expect — especially when acquisition slows down. This calculator generates a month-by-month 12-month projection showing exactly how your customer count evolves when churn and new acquisition are working against each other. Use it to understand the "leaky bucket" effect and to quantify the value of improving retention.</p>
 
         <div class="calculator-wrapper">
-            <div class="form-group" style="display: none;">
-                <!-- Currency not needed for churn generally, but good for consistency if we added revenue -->
-            </div>
-
             <div class="form-group">
                 <label for="start-customers">Starting Customers</label>
-                <input type="number" id="start-customers" placeholder="e.g., 100" min="0">
+                <input type="number" id="start-customers" placeholder="e.g., 500" min="0">
+                <small class="help-text">Your current total number of active customers at the start of the projection.</small>
             </div>
 
             <div class="form-group">
                 <label for="churn-rate">Monthly Churn Rate (%)</label>
                 <input type="number" id="churn-rate" placeholder="e.g., 5" min="0" max="100" step="0.1">
+                <small class="help-text">The percentage of customers who cancel or stop buying each month. Enter 5 for 5% monthly churn.</small>
             </div>
 
             <div class="form-group">
                 <label for="new-customers">New Customers per Month</label>
-                <input type="number" id="new-customers" placeholder="e.g., 20" min="0">
+                <input type="number" id="new-customers" placeholder="e.g., 30" min="0">
+                <small class="help-text">The number of new customers you acquire each month. Keep this constant for a steady-state projection.</small>
             </div>
 
             <div class="btn-group">
@@ -73,16 +88,11 @@
                 <button id="share-btn" class="btn btn-secondary">Share this Calculator</button>
             </div>
 
-            <div id="error-msg"
-                style="display:none; color: #dc3545; background: #ffe6e6; padding: 10px; border-radius: 4px; margin-bottom: 15px;">
-            </div>
-
-            <div class="result-box" style="text-align: left;">
-                <div style="text-align: center; margin-bottom: 20px;">
+            <div class="result-box">
+                <div style="margin-bottom: 20px;">
                     <div class="result-title">Customers after 12 Months</div>
                     <div class="result-value" id="final-customers">-</div>
-                    <div class="result-detail" style="color: #dc3545; font-weight: 600;">Total Lost Customers: <span
-                            id="total-lost">-</span></div>
+                    <div class="result-detail" style="color: #dc3545; font-weight: 600; margin-top: 8px;">Total Customers Lost to Churn: <span id="total-lost">-</span></div>
                 </div>
 
                 <div style="overflow-x: auto;">
@@ -104,43 +114,191 @@
             </div>
         </div>
 
+        <!-- Ad Unit -->
         <div class="ad-placeholder">
-            <!-- ADSENSE PLACEHOLDER: MIDDLE BANNER -->
-            Advertisement
+            <!-- ADSENSE PLACEHOLDER: MIDDLE BANNER AD UNIT -->
         </div>
 
         <section>
-            <h2>How to use</h2>
+            <h2>What Is Customer Churn?</h2>
+            <p>Customer churn (also called customer attrition) is the rate at which customers stop doing business with you. For subscription businesses, it's the percentage of subscribers who cancel each month. For transactional businesses, it's the percentage of customers who don't make a repeat purchase within a defined period.</p>
+            <p>Churn is often described as the "leaky bucket" problem: you pour new customers in at the top, but they leak out through the bottom. If the leak is fast enough, you can never fill the bucket — no matter how much you pour in. Understanding your churn rate and its compounding effect over time is essential for building a sustainable business.</p>
+            <p>Even a seemingly small monthly churn rate has a dramatic effect over time. A 5% monthly churn rate means you lose 46% of your customer base over 12 months — even before accounting for new acquisition. This calculator makes that effect visible.</p>
+        </section>
+
+        <section>
+            <h2>How It Works</h2>
+            <p>Enter three values:</p>
             <ul>
-                <li>Enter your current customer count.</li>
-                <li>Enter your monthly churn rate percentage.</li>
-                <li>Enter how many new customers you acquire monthly.</li>
-                <li>See a 12-month projection of your growth vs. churn.</li>
+                <li><strong>Starting Customers:</strong> Your current active customer count at the beginning of the projection period.</li>
+                <li><strong>Monthly Churn Rate (%):</strong> The percentage of customers who leave each month. This is applied to the customer count at the start of each month.</li>
+                <li><strong>New Customers per Month:</strong> The number of new customers you acquire each month. This is assumed to be constant throughout the 12-month period.</li>
+            </ul>
+            <p>The calculator runs a month-by-month simulation: it applies churn to the starting count, adds new customers, and carries the result forward to the next month. The table shows the full 12-month trajectory.</p>
+        </section>
+
+        <section>
+            <h2>Formula</h2>
+            <div class="formula-box">
+                <strong>Customers Lost in a Month</strong>
+                Customers Lost = Starting Customers × (Churn Rate % ÷ 100)
+            </div>
+            <div class="formula-box">
+                <strong>End of Month Customer Count</strong>
+                End Count = Starting Count − Customers Lost + New Customers Acquired
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-light);">This process repeats for each of the 12 months, with the end count of each month becoming the starting count of the next.</p>
+        </section>
+
+        <section>
+            <h2>Example Calculation</h2>
+            <div class="example-box">
+                <strong>Worked Example</strong>
+                <p>A SaaS company starts with <strong>400 customers</strong>, has a <strong>6% monthly churn rate</strong>, and acquires <strong>25 new customers</strong> per month.</p>
+                <p><strong>Month 1:</strong> Start: 400 | Lost: 24 (6%) | New: 25 | End: 401</p>
+                <p><strong>Month 3:</strong> Start: 402 | Lost: 24 | New: 25 | End: 403</p>
+                <p><strong>Month 6:</strong> Start: 404 | Lost: 24 | New: 25 | End: 405</p>
+                <p><strong>Month 12:</strong> End: ~407</p>
+                <p>Despite acquiring 300 new customers over the year (25 × 12), the company only grew from 400 to ~407 — a net gain of just 7 customers. The churn consumed almost all of the acquisition effort. This is the leaky bucket in action.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>When to Use This Calculator</h2>
+            <ul>
+                <li><strong>When evaluating the impact of your current churn rate</strong> — see exactly where your customer base will be in 12 months if nothing changes</li>
+                <li><strong>When modelling the value of retention improvements</strong> — run the calculator twice: once with your current churn rate and once with a reduced rate to see the difference</li>
+                <li><strong>When setting acquisition targets</strong> — if you want to reach a specific customer count in 12 months, this calculator helps you understand how much acquisition you need to offset churn</li>
+                <li><strong>When presenting to investors or stakeholders</strong> — a visual projection table makes the churn problem (or improvement) concrete and easy to understand</li>
+                <li><strong>When evaluating a retention initiative</strong> — if you're considering investing in customer success, onboarding improvements, or loyalty programmes, this calculator helps you quantify the potential return</li>
             </ul>
         </section>
 
         <section>
-            <h2>Analysis</h2>
-            <p>This calculator helps you visualize the "leaky bucket" effect. Even with strong acquisition, high churn
-                can plateau your growth.</p>
+            <h2>Common Mistakes</h2>
+            <ul>
+                <li><strong>Using annual churn instead of monthly churn.</strong> This calculator uses monthly churn. If you know your annual churn rate, convert it: Monthly Churn ≈ 1 − (1 − Annual Churn)^(1/12). For example, 40% annual churn ≈ 4.1% monthly churn.</li>
+                <li><strong>Assuming new customer acquisition is constant.</strong> In reality, acquisition often varies month to month. This calculator uses a constant acquisition rate for simplicity. For a more detailed model, you would need to vary acquisition by month.</li>
+                <li><strong>Ignoring the compounding effect of churn.</strong> Churn compounds — it applies to a shrinking base each month. This means the absolute number of customers lost decreases over time as the base shrinks, which can make a declining business look more stable than it is.</li>
+                <li><strong>Confusing gross churn with net churn.</strong> Gross churn is the percentage of customers who leave. Net churn accounts for expansion revenue from existing customers. This calculator models gross customer churn (headcount), not revenue churn.</li>
+            </ul>
         </section>
 
+        <section>
+            <h2>How to Interpret Your Result</h2>
+            <p>Look at the 12-month projection table and ask:</p>
+            <ul>
+                <li><strong>Is the end count higher or lower than the start?</strong> If it's lower, your churn is outpacing your acquisition — you're shrinking. This is a critical warning sign.</li>
+                <li><strong>What is the "steady state"?</strong> The point where the customer count stabilises (new customers = churned customers) is your steady state. If your steady state is below your current count, you're in decline.</li>
+                <li><strong>How many customers did you lose in total?</strong> The "Total Customers Lost" figure shows the cumulative churn over 12 months. This is the number of customers you had to replace just to stay flat.</li>
+                <li><strong>What would happen if you reduced churn by 1–2%?</strong> Re-run the calculator with a lower churn rate to see the impact. Often, a small improvement in retention has a surprisingly large effect on the 12-month outcome.</li>
+            </ul>
+
+            <div class="info-box">
+                <strong>💡 The Steady-State Formula</strong>
+                Your steady-state customer count (where growth = 0) is: New Customers per Month ÷ Monthly Churn Rate. For example, 25 new customers/month ÷ 5% churn = 500 steady-state customers. If you currently have more than 500 customers, you're in decline toward that number.
+            </div>
+        </section>
+
+        <section>
+            <h2>Frequently Asked Questions</h2>
+
+            <h3>What is a good monthly churn rate?</h3>
+            <p>For SaaS businesses, a monthly churn rate below 2% is considered good, and below 1% is excellent. Rates of 5–8% are common for early-stage businesses but are difficult to sustain long-term. For consumer subscription businesses, churn tends to be higher — 5–10% monthly is not unusual. The key benchmark is whether your acquisition rate exceeds your churn rate, and by how much.</p>
+
+            <h3>How do I calculate my monthly churn rate?</h3>
+            <p>Divide the number of customers who cancelled in a month by the number of customers at the start of that month. For example, if you started the month with 300 customers and 15 cancelled, your monthly churn rate is 15 ÷ 300 = 5%. Calculate this consistently over several months to get a reliable average.</p>
+
+            <h3>What is the difference between customer churn and revenue churn?</h3>
+            <p>Customer churn measures the percentage of customers who leave. Revenue churn measures the percentage of revenue lost. These can differ significantly if your customers have different plan sizes. A business might have 5% customer churn but only 3% revenue churn if the customers who leave are on smaller plans. Revenue churn is often more important for financial planning.</p>
+
+            <h3>How can I reduce my churn rate?</h3>
+            <p>Common strategies include: improving onboarding so customers reach value faster, proactive customer success outreach to at-risk accounts, building stronger product habits and integrations that make switching costly, offering annual plans (which reduce monthly churn by locking customers in), and gathering exit survey data to understand why customers leave and addressing root causes.</p>
+
+            <h3>How does this relate to LTV?</h3>
+            <p>Churn rate is a direct input into the LTV formula. A lower churn rate means a longer average customer lifespan, which means higher LTV. Use the <a href="ltv-calculator.html">LTV Calculator</a> to see exactly how a reduction in churn translates into higher customer lifetime value.</p>
+        </section>
+
+        <p class="disclaimer-note">Disclaimer: This calculator provides a simplified projection for informational purposes only. The model assumes constant churn and acquisition rates, which will not reflect real-world variability. Use this as a directional tool, not a precise forecast. Consult a qualified analyst for detailed business modelling.</p>
+
+        <hr class="section-divider">
+
+        <section>
+            <h3>Related Calculators</h3>
+            <div class="grid">
+                <div class="card">
+                    <h3>LTV Calculator</h3>
+                    <p>Calculate Customer Lifetime Value — directly impacted by your churn rate.</p>
+                    <a href="ltv-calculator.html" class="btn-link">Calculate LTV &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>CAC Calculator</h3>
+                    <p>Calculate how much you spend to acquire each new customer.</p>
+                    <a href="cac-calculator.html" class="btn-link">Calculate CAC &rarr;</a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
         <div class="container">
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Use</a>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="margin-bottom:16px;display:inline-flex;">
+                        <span class="logo-icon">
+                            <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="1" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.9"/>
+                                <rect x="11" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                                <rect x="1" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                                <rect x="11" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.5"/>
+                            </svg>
+                        </span>
+                        <span>
+                            <span class="logo-name">Business Calculator Hub</span>
+                            <span class="logo-sub">Free Finance Tools</span>
+                        </span>
+                    </a>
+                    <p>Free, accurate business calculators for entrepreneurs and small business owners.</p>
+                </div>
+                <div class="footer-nav">
+                    <div class="footer-col">
+                        <h4>Calculators</h4>
+                        <a href="profit-margin-calculator.html">Profit Margin</a>
+                        <a href="markup-calculator.html">Markup</a>
+                        <a href="pricing-calculator.html">Pricing</a>
+                        <a href="break-even-calculator.html">Break-Even</a>
+                        <a href="cac-calculator.html">CAC</a>
+                        <a href="ltv-calculator.html">LTV</a>
+                        <a href="roi-calculator.html">ROI</a>
+                        <a href="payback-period-calculator.html">Payback Period</a>
+                        <a href="churn-impact-calculator.html">Churn Impact</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <a href="guides/index.html">All Guides</a>
+                        <a href="guides/profit-margin-vs-markup.html">Margin vs Markup</a>
+                        <a href="guides/how-to-calculate-break-even.html">Break-Even Guide</a>
+                        <a href="guides/what-is-cac.html">What Is CAC?</a>
+                        <a href="guides/how-to-estimate-roi.html">Estimating ROI</a>
+                        <a href="guides/common-pricing-mistakes.html">Pricing Mistakes</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <a href="about.html">About</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Use</a>
+                        <a href="disclaimer.html">Disclaimer</a>
+                    </div>
+                </div>
             </div>
-            <p>&copy; <span id="current-year">2026</span> Business Calculator Hub. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2026</span> Business Calculator Hub. All rights reserved.</p>
+                <p>For informational purposes only. Not professional financial advice.</p>
+            </div>
         </div>
     </footer>
     <script src="assets/utils.js"></script>
     <script src="assets/calc-churn.js"></script>
 </body>
-
 </html>

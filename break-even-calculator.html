@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Break-Even Calculator - Business Calculator Hub</title>
-    <meta name="description" content="Calculate your break-even point in units and revenue.">
+    <title>Break-Even Calculator — Find Your Break-Even Point in Units & Revenue | Business Calculator Hub</title>
+    <meta name="description" content="Calculate your break-even point in units and revenue. Enter your fixed costs, selling price, and variable cost per unit to find the minimum sales volume needed to cover all costs. Includes formula, examples, and FAQ.">
     <link rel="stylesheet" href="assets/styles.css">
-    <!-- ADSENSE PLACEHOLDER: Paste your script here -->
+    <link rel="stylesheet" href="assets/styles-extra.css">
+    <!-- ADSENSE PLACEHOLDER: Paste your AdSense script tag here -->
 </head>
-
 <body>
     <header>
         <div class="container nav-flex">
-            <a href="index.html" class="logo">📊 Business Calculator Hub</a>
-            <nav class="footer-links" style="margin-bottom: 0;">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">
+                    <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="1" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.9"/>
+                        <rect x="11" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                        <rect x="1" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                        <rect x="11" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.5"/>
+                    </svg>
+                </span>
+                <span>
+                    <span class="logo-name">Business Calculator Hub</span>
+                    <span class="logo-sub">Free Finance Tools</span>
+                </span>
+            </a>
+            <nav class="nav-links">
+                <a href="guides/index.html">Guides</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
             </nav>
@@ -23,6 +36,7 @@
 
     <main class="container">
         <h1>Break-Even Calculator</h1>
+        <p class="page-intro">The break-even point is the minimum number of units you need to sell — or the minimum revenue you need to generate — to cover all your costs. Below this point, you're losing money. Above it, every additional unit sold contributes directly to profit. Knowing your break-even point is one of the most important things a business owner can do, because it turns "how are we doing?" from a vague question into a specific, measurable target.</p>
 
         <div class="calculator-wrapper">
             <div class="form-group">
@@ -37,20 +51,21 @@
             </div>
 
             <div class="form-group">
-                <label for="fixed-cost">Total Fixed Costs</label>
-                <input type="number" id="fixed-cost" placeholder="e.g., Rent, Salaries, Insurance" min="0">
-                <small class="help-text">Costs that don't change based on number of units sold.</small>
+                <label for="fixed-cost">Total Fixed Costs (per month)</label>
+                <input type="number" id="fixed-cost" placeholder="e.g., 5000" min="0" step="0.01">
+                <small class="help-text">All costs that remain constant regardless of how many units you sell — rent, salaries, insurance, software subscriptions, loan repayments, etc.</small>
             </div>
 
             <div class="form-group">
-                <label for="price">Price per Unit</label>
-                <input type="number" id="price" placeholder="Selling price of one unit" min="0">
+                <label for="price">Selling Price per Unit</label>
+                <input type="number" id="price" placeholder="e.g., 80" min="0" step="0.01">
+                <small class="help-text">The price you charge the customer for one unit of your product or service.</small>
             </div>
 
             <div class="form-group">
                 <label for="variable-cost">Variable Cost per Unit</label>
-                <input type="number" id="variable-cost" placeholder="Cost to make one unit" min="0">
-                <small class="help-text">Materials, packaging, commissions, etc.</small>
+                <input type="number" id="variable-cost" placeholder="e.g., 30" min="0" step="0.01">
+                <small class="help-text">The direct cost to produce or deliver one unit — materials, packaging, direct labour, payment processing fees, shipping, etc.</small>
             </div>
 
             <div class="btn-group">
@@ -61,73 +76,231 @@
             <div class="result-box">
                 <div class="result-title">Break-Even Units</div>
                 <div class="result-value" id="result-units">-</div>
-                <small class="result-detail">Units you need to sell</small>
+                <small class="result-detail">Units you must sell per month to cover all costs</small>
 
                 <div class="result-title" style="margin-top: 20px;">Break-Even Revenue</div>
                 <div class="result-value" id="result-revenue">-</div>
+                <small class="result-detail">Monthly revenue needed to reach break-even</small>
+
+                <div class="result-title" style="margin-top: 20px;">Contribution Margin per Unit</div>
+                <div class="result-value" id="result-contribution">-</div>
+                <small class="result-detail">Profit contribution of each unit sold toward fixed costs</small>
 
                 <button id="copy-btn" class="btn btn-primary" style="margin-top: 20px;">Copy Results</button>
             </div>
         </div>
 
+        <!-- Ad Unit -->
         <div class="ad-placeholder">
-            <!-- ADSENSE PLACEHOLDER: MIDDLE BANNER -->
-            Advertisement
+            <!-- ADSENSE PLACEHOLDER: MIDDLE BANNER AD UNIT -->
         </div>
 
         <section>
-            <h2>How to use</h2>
+            <h2>What Is the Break-Even Point?</h2>
+            <p>The break-even point is the level of sales at which total revenue exactly equals total costs — you are neither making a profit nor incurring a loss. It is the threshold your business must cross before it starts generating profit.</p>
+            <p>Break-even analysis is one of the most practical tools in business finance. It gives you a concrete, specific answer to the question: "How much do we need to sell just to survive?" Every unit sold above the break-even point contributes directly to profit. Every unit sold below it means you're still covering costs.</p>
+            <p>Understanding your break-even point is essential for setting sales targets, evaluating pricing decisions, assessing the viability of a new product, and understanding the impact of cost changes on your business.</p>
+        </section>
+
+        <section>
+            <h2>How It Works</h2>
+            <p>Enter three values:</p>
             <ul>
-                <li><strong>Fixed Costs:</strong> Enter total monthly overhead expenses.</li>
-                <li><strong>Price per Unit:</strong> Enter the selling price of one product.</li>
-                <li><strong>Variable Cost:</strong> Enter costs directly tied to creating one product.</li>
-                <li>The results show exactly how many units you must sell to reach $0 profit (no loss).</li>
+                <li><strong>Total Fixed Costs:</strong> All costs that remain constant regardless of how many units you sell. This includes rent, salaries (of non-production staff), insurance, software subscriptions, loan repayments, and any other overhead that you pay whether you sell 0 units or 10,000 units. Use your total monthly fixed costs.</li>
+                <li><strong>Selling Price per Unit:</strong> The price you charge the customer for one unit of your product or service.</li>
+                <li><strong>Variable Cost per Unit:</strong> The direct cost to produce or deliver one unit. This includes raw materials, packaging, direct labour, payment processing fees, and any other cost that increases with each additional unit sold.</li>
+            </ul>
+            <p>The calculator computes the contribution margin per unit (selling price minus variable cost), then divides total fixed costs by the contribution margin to find the break-even unit count. It also calculates the break-even revenue (units × selling price).</p>
+        </section>
+
+        <section>
+            <h2>Formula</h2>
+            <div class="formula-box">
+                <strong>Contribution Margin per Unit</strong>
+                Contribution Margin = Selling Price per Unit − Variable Cost per Unit
+            </div>
+            <div class="formula-box">
+                <strong>Break-Even Units Formula</strong>
+                Break-Even Units = Total Fixed Costs ÷ Contribution Margin per Unit
+            </div>
+            <div class="formula-box">
+                <strong>Break-Even Revenue</strong>
+                Break-Even Revenue = Break-Even Units × Selling Price per Unit
+            </div>
+        </section>
+
+        <section>
+            <h2>Example Calculation</h2>
+            <div class="example-box">
+                <strong>Worked Example — Online Clothing Store</strong>
+                <p>An online clothing retailer has monthly fixed costs of <strong>$6,000</strong> (warehouse rent $2,500, salaries $2,800, software and website $700). Each item sells for <strong>$60</strong>. The variable cost per item (wholesale cost + packaging + shipping) is <strong>$22</strong>.</p>
+                <p>Contribution Margin = $60 − $22 = <strong>$38 per unit</strong></p>
+                <p>Break-Even Units = $6,000 ÷ $38 = <strong>158 units per month</strong> (rounded up)</p>
+                <p>Break-Even Revenue = 158 × $60 = <strong>$9,480 per month</strong></p>
+                <p>The store must sell at least 158 items per month to cover all costs. The 159th item sold generates $38 of pure profit. If the store sells 200 items, profit = (200 − 158) × $38 = $1,596.</p>
+            </div>
+
+            <div class="example-box" style="margin-top: 20px;">
+                <strong>Worked Example — Freelance Consultant</strong>
+                <p>A freelance consultant has monthly fixed costs of <strong>$2,400</strong> (home office, software, professional memberships, health insurance). They charge <strong>$150 per hour</strong>. Their variable cost per hour (subcontracted research, tools used per project) is <strong>$15</strong>.</p>
+                <p>Contribution Margin = $150 − $15 = <strong>$135 per hour</strong></p>
+                <p>Break-Even Hours = $2,400 ÷ $135 = <strong>18 billable hours per month</strong></p>
+                <p>Break-Even Revenue = 18 × $150 = <strong>$2,700 per month</strong></p>
+                <p>The consultant only needs 18 billable hours per month to cover all costs — roughly 4–5 hours per week. Every hour billed beyond that is $135 of profit.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>When to Use This Calculator</h2>
+            <ul>
+                <li><strong>When launching a new product or business</strong> — before you start, calculate the break-even point to understand the minimum viable sales volume and assess whether it's realistic</li>
+                <li><strong>When setting monthly sales targets</strong> — the break-even point is the floor for your sales target; anything above it is profit</li>
+                <li><strong>When evaluating a price change</strong> — if you raise or lower your price, the break-even point changes; use this calculator to model the impact before making the change</li>
+                <li><strong>When your costs change</strong> — if rent increases or a supplier raises prices, recalculate to see how many more units you need to sell to maintain the same profitability</li>
+                <li><strong>When considering a new overhead expense</strong> — before hiring a new employee or signing a lease, calculate how many additional units you need to sell to cover the new fixed cost</li>
+                <li><strong>When presenting to investors or lenders</strong> — break-even analysis is a standard component of any business plan or financial presentation</li>
             </ul>
         </section>
 
         <section>
-            <h2>FAQ</h2>
-            <h3>What is Break-Even Point?</h3>
-            <p>The break-even point is where total costs and total revenue are equal. You are not making a profit, but
-                you are not losing money ("in the red").</p>
-
-            <h3>Why is this important?</h3>
-            <p>It tells you the minimum performance required to survive. Any sales above the break-even units contribute
-                directly to profit.</p>
+            <h2>Common Mistakes</h2>
+            <ul>
+                <li><strong>Mixing up fixed and variable costs.</strong> Fixed costs are constant regardless of volume (rent, salaries). Variable costs change with each unit sold (materials, packaging). Putting a variable cost in the fixed cost field — or vice versa — will produce an incorrect break-even point. If you're unsure, ask: "Would this cost disappear if I sold zero units?" If yes, it's variable. If no, it's fixed.</li>
+                <li><strong>Forgetting some fixed costs.</strong> It's easy to remember rent but forget insurance, software subscriptions, loan repayments, or the cost of your own time. Make sure your fixed cost figure captures every recurring expense that exists regardless of sales volume.</li>
+                <li><strong>Using an average selling price when you sell multiple products.</strong> If you sell products at different price points, a single break-even calculation won't be accurate. Either calculate break-even separately for each product, or use a weighted average price and variable cost based on your expected sales mix.</li>
+                <li><strong>Treating break-even as the target.</strong> Break-even is the floor, not the goal. Your actual sales target should be significantly above break-even to generate meaningful profit. Use the break-even point as a minimum threshold, not a success metric.</li>
+                <li><strong>Not updating the calculation when things change.</strong> Break-even analysis is only useful if it reflects current costs and prices. Recalculate whenever there's a significant change in fixed costs, variable costs, or selling price.</li>
+            </ul>
         </section>
 
-        <section style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
+        <section>
+            <h2>How to Interpret Your Result</h2>
+            <p>The break-even unit count tells you the minimum number of units you must sell each month to avoid a loss. Here's how to use the result:</p>
+            <ul>
+                <li><strong>Compare to your current sales volume.</strong> If you're already selling well above break-even, your business is profitable at the gross level. If you're below break-even, you're currently losing money and need to either increase sales, reduce costs, or raise prices.</li>
+                <li><strong>Use it to set a realistic sales target.</strong> Your monthly sales target should be your break-even units plus enough additional units to generate your desired profit. For example, if break-even is 150 units and you want $5,000 profit at a $38 contribution margin, your target is 150 + 132 = 282 units.</li>
+                <li><strong>Assess the margin of safety.</strong> The margin of safety is how far your current sales are above break-even. A large margin of safety means your business can absorb a significant drop in sales before becoming unprofitable. A small margin of safety means you're vulnerable to any downturn.</li>
+            </ul>
+
+            <div class="info-box">
+                <strong>💡 Understanding Contribution Margin</strong>
+                The contribution margin per unit is the amount each unit sold contributes toward covering fixed costs — and then toward profit once fixed costs are covered. A higher contribution margin means you need to sell fewer units to break even. You can increase contribution margin by raising your price, reducing variable costs, or both. Use the <a href="pricing-calculator.html">Pricing Calculator</a> to model the impact of price changes on your contribution margin.
+            </div>
+        </section>
+
+        <section>
+            <h2>Frequently Asked Questions</h2>
+
+            <h3>What is the difference between break-even units and break-even revenue?</h3>
+            <p>Break-even units is the number of individual products or services you need to sell to cover all costs. Break-even revenue is the total sales value (in currency) needed to reach break-even. They are related: break-even revenue = break-even units × selling price. Both are useful — units is more actionable for production planning, while revenue is more useful for financial reporting and investor conversations.</p>
+
+            <h3>What if I sell multiple products at different prices?</h3>
+            <p>For a multi-product business, you have two options. First, calculate break-even separately for each product using its own price and variable cost. Second, calculate a blended break-even using a weighted average price and variable cost based on your expected sales mix. The second approach gives you a single break-even figure for the whole business, but it's only accurate if your actual sales mix matches your assumptions.</p>
+
+            <h3>How does break-even analysis relate to profit margin?</h3>
+            <p>They are complementary tools. Profit margin tells you how profitable each unit is relative to its selling price. Break-even analysis tells you how many units you need to sell to cover your fixed costs. A high profit margin means a lower break-even point (each unit covers more of your fixed costs). Use the <a href="profit-margin-calculator.html">Profit Margin Calculator</a> alongside this one for a complete picture.</p>
+
+            <h3>Can I use this for a service business?</h3>
+            <p>Yes. For a service business, replace "units" with your billing unit — hours, projects, clients, or sessions. Your "selling price" is your rate per billing unit, and your "variable cost" is any direct cost associated with delivering that unit of service (subcontractors, materials, tools used per project). The formula works the same way.</p>
+
+            <h3>What should I do if my break-even point seems unrealistically high?</h3>
+            <p>If the break-even unit count is higher than you can realistically sell, you have three levers: raise your selling price (increases contribution margin), reduce variable costs (increases contribution margin), or reduce fixed costs (lowers the total that needs to be covered). Often a combination of all three is needed. The <a href="pricing-calculator.html">Pricing Calculator</a> can help you model the impact of price changes on your required sales volume.</p>
+        </section>
+
+        <p class="disclaimer-note">Disclaimer: This calculator provides estimates for informational purposes only. Break-even calculations are based on the inputs you provide and assume constant costs and prices. Real-world results will vary. This tool is intended as a planning aid, not a substitute for professional financial advice. Consult a qualified accountant or business advisor for comprehensive financial planning.</p>
+
+        <hr class="section-divider">
+
+        <section>
             <h3>Related Calculators</h3>
             <div class="grid">
                 <div class="card">
-                    <h3>ROI Calculator</h3>
-                    <p>Calculate return on investment.</p>
-                    <a href="roi-calculator.html" class="btn-link">Go &rarr;</a>
+                    <h3>Pricing Calculator</h3>
+                    <p>Find the right selling price that covers unit costs, overhead, and delivers your target profit margin.</p>
+                    <a href="pricing-calculator.html" class="btn-link">Set Your Price &rarr;</a>
                 </div>
                 <div class="card">
-                    <h3>Pricing Calculator</h3>
-                    <p>Set prices to ensure profit.</p>
-                    <a href="pricing-calculator.html" class="btn-link">Go &rarr;</a>
+                    <h3>Profit Margin Calculator</h3>
+                    <p>Calculate the gross profit and margin percentage on your products or services.</p>
+                    <a href="profit-margin-calculator.html" class="btn-link">Calculate Margin &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>ROI Calculator</h3>
+                    <p>Measure the return on investment for any business expense or campaign.</p>
+                    <a href="roi-calculator.html" class="btn-link">Calculate ROI &rarr;</a>
                 </div>
             </div>
         </section>
 
+        <section>
+            <h3>Related Guides</h3>
+            <ul>
+                <li><a href="guides/how-to-calculate-break-even.html">How to Calculate Your Break-Even Point — Step-by-Step Guide</a></li>
+                <li><a href="guides/common-pricing-mistakes.html">5 Common Pricing Mistakes Small Businesses Make</a></li>
+                <li><a href="guides/profit-margin-vs-markup.html">Profit Margin vs. Markup: What's the Difference?</a></li>
+            </ul>
+        </section>
     </main>
 
     <footer>
         <div class="container">
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Use</a>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="margin-bottom:16px;display:inline-flex;">
+                        <span class="logo-icon">
+                            <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="1" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.9"/>
+                                <rect x="11" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                                <rect x="1" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                                <rect x="11" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.5"/>
+                            </svg>
+                        </span>
+                        <span>
+                            <span class="logo-name">Business Calculator Hub</span>
+                            <span class="logo-sub">Free Finance Tools</span>
+                        </span>
+                    </a>
+                    <p>Free, accurate business calculators for entrepreneurs and small business owners.</p>
+                </div>
+                <div class="footer-nav">
+                    <div class="footer-col">
+                        <h4>Calculators</h4>
+                        <a href="profit-margin-calculator.html">Profit Margin</a>
+                        <a href="markup-calculator.html">Markup</a>
+                        <a href="pricing-calculator.html">Pricing</a>
+                        <a href="break-even-calculator.html">Break-Even</a>
+                        <a href="cac-calculator.html">CAC</a>
+                        <a href="ltv-calculator.html">LTV</a>
+                        <a href="roi-calculator.html">ROI</a>
+                        <a href="payback-period-calculator.html">Payback Period</a>
+                        <a href="churn-impact-calculator.html">Churn Impact</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <a href="guides/index.html">All Guides</a>
+                        <a href="guides/profit-margin-vs-markup.html">Margin vs Markup</a>
+                        <a href="guides/how-to-calculate-break-even.html">Break-Even Guide</a>
+                        <a href="guides/what-is-cac.html">What Is CAC?</a>
+                        <a href="guides/how-to-estimate-roi.html">Estimating ROI</a>
+                        <a href="guides/common-pricing-mistakes.html">Pricing Mistakes</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <a href="about.html">About</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Use</a>
+                        <a href="disclaimer.html">Disclaimer</a>
+                    </div>
+                </div>
             </div>
-            <p>&copy; <span id="current-year">2026</span> Business Calculator Hub. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2026</span> Business Calculator Hub. All rights reserved.</p>
+                <p>For informational purposes only. Not professional financial advice.</p>
+            </div>
         </div>
     </footer>
     <script src="assets/utils.js"></script>
     <script src="assets/calc-breakeven.js"></script>
 </body>
-
 </html>

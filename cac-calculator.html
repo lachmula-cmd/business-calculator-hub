@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAC Calculator - Business Calculator Hub</title>
-    <meta name="description" content="Calculate your Customer Acquisition Cost (CAC) to optimize marketing spend.">
+    <title>CAC Calculator — Calculate Customer Acquisition Cost | Business Calculator Hub</title>
+    <meta name="description" content="Calculate your Customer Acquisition Cost (CAC) to understand how much you spend to win each new customer. Essential for evaluating marketing efficiency and comparing against customer lifetime value.">
     <link rel="stylesheet" href="assets/styles.css">
-    <!-- ADSENSE PLACEHOLDER: Paste your script here -->
+    <link rel="stylesheet" href="assets/styles-extra.css">
+    <!-- ADSENSE PLACEHOLDER: Paste your AdSense script tag here -->
 </head>
-
 <body>
     <header>
         <div class="container nav-flex">
-            <a href="index.html" class="logo">📊 Business Calculator Hub</a>
-            <nav class="footer-links" style="margin-bottom: 0;">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">
+                    <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="1" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.9"/>
+                        <rect x="11" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                        <rect x="1" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                        <rect x="11" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.5"/>
+                    </svg>
+                </span>
+                <span>
+                    <span class="logo-name">Business Calculator Hub</span>
+                    <span class="logo-sub">Free Finance Tools</span>
+                </span>
+            </a>
+            <nav class="nav-links">
+                <a href="guides/index.html">Guides</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
             </nav>
@@ -22,7 +35,8 @@
     </header>
 
     <main class="container">
-        <h1>CAC Calculator</h1>
+        <h1>CAC Calculator — Customer Acquisition Cost</h1>
+        <p class="page-intro">Customer Acquisition Cost (CAC) tells you exactly how much it costs your business to win one new customer. It's one of the most important metrics for any business that spends money on marketing or sales — because if you're spending more to acquire a customer than that customer is worth over their lifetime, your business is structurally losing money with every new sale. This calculator makes it simple to measure and track your CAC over time.</p>
 
         <div class="calculator-wrapper">
             <div class="form-group">
@@ -37,15 +51,17 @@
             </div>
 
             <div class="form-group">
-                <label for="spend">Total Sales & Marketing Spend</label>
+                <label for="spend">Total Sales &amp; Marketing Spend</label>
                 <div class="input-suffix">
-                    <input type="number" id="spend" placeholder="Total spend in period" min="0">
+                    <input type="number" id="spend" placeholder="e.g., 10000" min="0">
                 </div>
+                <small class="help-text">All money spent on sales and marketing in the chosen period — ad spend, agency fees, sales team salaries, tools, events, content production, etc.</small>
             </div>
 
             <div class="form-group">
                 <label for="customers">New Customers Acquired</label>
-                <input type="number" id="customers" placeholder="Count of new customers" min="1">
+                <input type="number" id="customers" placeholder="e.g., 200" min="1">
+                <small class="help-text">The number of new customers gained in the same period. Do not include existing customers who made repeat purchases.</small>
             </div>
 
             <div class="btn-group">
@@ -56,68 +72,203 @@
             <div class="result-box">
                 <div class="result-title">Customer Acquisition Cost (CAC)</div>
                 <div class="result-value" id="result-cac">-</div>
+                <small class="result-detail">Average cost to acquire one new customer</small>
 
                 <button id="copy-btn" class="btn btn-primary" style="margin-top: 20px;">Copy Results</button>
             </div>
         </div>
 
+        <!-- Ad Unit -->
         <div class="ad-placeholder">
-            <!-- ADSENSE PLACEHOLDER: MIDDLE BANNER -->
-            Advertisement
+            <!-- ADSENSE PLACEHOLDER: MIDDLE BANNER AD UNIT -->
         </div>
 
         <section>
-            <h2>How to use</h2>
+            <h2>What Is Customer Acquisition Cost (CAC)?</h2>
+            <p>Customer Acquisition Cost is the total amount of money a business spends on sales and marketing to acquire one new paying customer. It is calculated over a specific time period — typically a month, quarter, or year — by dividing total sales and marketing expenditure by the number of new customers gained in that same period.</p>
+            <p>CAC is a fundamental metric for any business that actively spends money to attract customers. It tells you the efficiency of your customer acquisition efforts and, when compared to Customer Lifetime Value (LTV), tells you whether your business model is economically sustainable.</p>
+            <p>A business with a CAC of $200 and an LTV of $800 is in a healthy position — it spends $200 to acquire a customer worth $800. A business with a CAC of $200 and an LTV of $180 is losing money on every customer it acquires, regardless of how fast it grows.</p>
+        </section>
+
+        <section>
+            <h2>How It Works</h2>
+            <p>Choose a specific time period — a month, quarter, or year. Then enter:</p>
             <ul>
-                <li>Pick a specific time period (e.g., last month).</li>
-                <li>Enter total money spent on sales and marketing in that period.</li>
-                <li>Enter the number of new customers gained in that same period.</li>
+                <li><strong>Total Sales &amp; Marketing Spend:</strong> Every dollar spent on acquiring new customers during that period. This includes paid advertising (Google, Meta, LinkedIn, etc.), agency or freelancer fees, sales team salaries and commissions, marketing tools and software, events and trade shows, content production, and any other cost directly related to customer acquisition.</li>
+                <li><strong>New Customers Acquired:</strong> The number of new, first-time paying customers gained in the same period. Do not include repeat purchases from existing customers — those are retention, not acquisition.</li>
+            </ul>
+            <p>The calculator divides total spend by new customers to give you your average CAC for that period.</p>
+        </section>
+
+        <section>
+            <h2>Formula</h2>
+            <div class="formula-box">
+                <strong>Customer Acquisition Cost Formula</strong>
+                CAC = Total Sales &amp; Marketing Spend ÷ Number of New Customers Acquired
+            </div>
+        </section>
+
+        <section>
+            <h2>Example Calculation</h2>
+            <div class="example-box">
+                <strong>Worked Example — SaaS Business, Q1</strong>
+                <p>In Q1, a software company spent <strong>$18,000</strong> on marketing: $10,000 on Google Ads, $5,000 on a content agency, $2,000 on a marketing tool stack, and $1,000 on a webinar. During the same quarter, they acquired <strong>90 new paying customers</strong>.</p>
+                <p>CAC = $18,000 ÷ 90 = <strong>$200 per customer</strong></p>
+                <p>If their average customer pays $80/month and stays for 18 months, their LTV is approximately $1,440 — giving an LTV:CAC ratio of 7.2:1. This is an excellent ratio.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>When to Use This Calculator</h2>
+            <ul>
+                <li><strong>Monthly or quarterly tracking</strong> — calculate CAC regularly to spot trends. A rising CAC over time is a warning sign that your marketing is becoming less efficient.</li>
+                <li><strong>When evaluating a new marketing channel</strong> — run a campaign, then calculate the CAC for that specific channel to decide whether to scale it or cut it.</li>
+                <li><strong>When comparing CAC to LTV</strong> — use this alongside the <a href="ltv-calculator.html">LTV Calculator</a> to assess whether your customer economics are healthy.</li>
+                <li><strong>When pitching to investors</strong> — investors in growth-stage businesses will almost always ask about CAC and LTV. Having accurate, up-to-date figures demonstrates financial discipline.</li>
+                <li><strong>When planning a marketing budget</strong> — if you know your target CAC and your growth target, you can work backwards to determine your required marketing budget.</li>
             </ul>
         </section>
 
         <section>
-            <h2>FAQ</h2>
-            <h3>What is CAC?</h3>
-            <p>Customer Acquisition Cost (CAC) is the total cost of acquiring a new customer, including all sales and
-                marketing costs.</p>
-
-            <h3>Why is it important?</h3>
-            <p>If your CAC is higher than your customer's Lifetime Value (LTV), your business effectively loses money
-                with every new customer.</p>
+            <h2>Common Mistakes</h2>
+            <ul>
+                <li><strong>Including existing customer revenue in the "new customers" count.</strong> CAC measures the cost of acquiring new customers only. If you include repeat purchases or renewals, your CAC will appear artificially low.</li>
+                <li><strong>Forgetting to include sales team costs.</strong> Many businesses include ad spend but forget that their sales team's salaries, commissions, and tools are also part of the cost of acquiring customers. A complete CAC figure includes all sales and marketing costs.</li>
+                <li><strong>Measuring over too short a period.</strong> A single week or even a single month can be misleading due to timing differences between when you spend and when customers convert. Quarterly or annual CAC is often more reliable.</li>
+                <li><strong>Not segmenting by channel.</strong> Your blended CAC is useful, but knowing the CAC for each individual channel (paid search, organic, referral, events) is far more actionable. It tells you where to invest more and where to cut.</li>
+                <li><strong>Treating CAC in isolation.</strong> CAC only makes sense in the context of LTV. A CAC of $500 might be perfectly acceptable if your LTV is $5,000, but catastrophic if your LTV is $300.</li>
+            </ul>
         </section>
 
-        <section style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
+        <section>
+            <h2>How to Interpret Your Result</h2>
+            <p>CAC alone is not enough to judge whether your business is healthy. The key metric is the <strong>LTV:CAC ratio</strong>:</p>
+            <ul>
+                <li><strong>LTV:CAC below 1:1</strong> — You are losing money on every customer. This is unsustainable.</li>
+                <li><strong>LTV:CAC of 1:1 to 2:1</strong> — You are barely breaking even on customer acquisition. Very little room for error.</li>
+                <li><strong>LTV:CAC of 3:1</strong> — Generally considered the minimum healthy ratio for a sustainable business. This is the benchmark most investors look for.</li>
+                <li><strong>LTV:CAC of 5:1 or higher</strong> — Strong. You may actually be underinvesting in growth — you could afford to spend more on acquisition.</li>
+            </ul>
+            <p>Also track your <strong>CAC payback period</strong> — how many months of revenue from a customer it takes to recover the CAC. Use the <a href="payback-period-calculator.html">Payback Period Calculator</a> to calculate this.</p>
+
+            <div class="info-box">
+                <strong>💡 Industry Benchmarks</strong>
+                CAC varies enormously by industry. E-commerce businesses often target a CAC of $10–$50. SaaS companies may have a CAC of $100–$1,000+ depending on the contract value. B2B enterprise sales can have a CAC of $5,000–$50,000. Always benchmark against your own industry, not general averages.
+            </div>
+        </section>
+
+        <section>
+            <h2>Frequently Asked Questions</h2>
+
+            <h3>Should I include my own salary in the CAC calculation?</h3>
+            <p>If you spend a significant portion of your time on sales and marketing activities, then yes — a portion of your salary should be included. The goal is to capture the true economic cost of acquiring customers. If you're a founder spending 50% of your time on sales, include 50% of your salary in the marketing spend figure.</p>
+
+            <h3>How often should I calculate CAC?</h3>
+            <p>Monthly tracking is ideal for fast-growing businesses. Quarterly is sufficient for more stable businesses. The important thing is consistency — calculate it the same way each time so you can track trends meaningfully. A rising CAC trend is an early warning sign worth investigating.</p>
+
+            <h3>What is a good CAC for my business?</h3>
+            <p>There is no universal "good" CAC — it depends entirely on your LTV. A $500 CAC is excellent if your LTV is $5,000 and problematic if your LTV is $600. Focus on the LTV:CAC ratio rather than the absolute CAC number. Use the <a href="ltv-calculator.html">LTV Calculator</a> to calculate your LTV and compare.</p>
+
+            <h3>How can I reduce my CAC?</h3>
+            <p>Common strategies include: improving conversion rates on existing traffic (so you get more customers from the same spend), investing in organic channels like SEO and content marketing (which have lower marginal cost over time), building a referral programme (customers acquiring customers), and improving your sales process to close more leads. Reducing CAC is often more impactful than increasing revenue.</p>
+
+            <h3>What is the difference between blended CAC and channel CAC?</h3>
+            <p>Blended CAC is the average across all channels — what this calculator produces. Channel CAC is the cost of acquiring a customer through a specific channel (e.g., Google Ads only, or organic search only). Channel CAC is more actionable because it tells you which channels are efficient and which are not. Track both.</p>
+        </section>
+
+        <p class="disclaimer-note">Disclaimer: This calculator provides estimates for informational purposes only. CAC calculations are based on the inputs you provide and represent averages over the chosen period. Actual customer economics will vary. Consult a qualified marketing or financial professional for comprehensive analysis.</p>
+
+        <hr class="section-divider">
+
+        <section>
             <h3>Related Calculators</h3>
             <div class="grid">
                 <div class="card">
                     <h3>LTV Calculator</h3>
-                    <p>Calculate customer lifetime value.</p>
-                    <a href="ltv-calculator.html" class="btn-link">Go &rarr;</a>
+                    <p>Calculate Customer Lifetime Value and compare it to your CAC to assess the health of your customer economics.</p>
+                    <a href="ltv-calculator.html" class="btn-link">Calculate LTV &rarr;</a>
                 </div>
                 <div class="card">
                     <h3>ROI Calculator</h3>
-                    <p>Calculate return on investment.</p>
-                    <a href="roi-calculator.html" class="btn-link">Go &rarr;</a>
+                    <p>Measure the return on investment for a specific marketing campaign or channel.</p>
+                    <a href="roi-calculator.html" class="btn-link">Calculate ROI &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>Payback Period Calculator</h3>
+                    <p>Find out how many months it takes to recover your CAC from a customer's monthly revenue.</p>
+                    <a href="payback-period-calculator.html" class="btn-link">Calculate Payback &rarr;</a>
                 </div>
             </div>
         </section>
 
+        <section>
+            <h3>Related Guides</h3>
+            <ul>
+                <li><a href="guides/what-is-cac.html">What Is Customer Acquisition Cost (CAC)? A Complete Guide</a></li>
+                <li><a href="guides/how-to-estimate-roi.html">How to Estimate ROI Before You Spend</a></li>
+            </ul>
+        </section>
     </main>
 
     <footer>
         <div class="container">
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Use</a>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="margin-bottom:16px;display:inline-flex;">
+                        <span class="logo-icon">
+                            <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="1" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.9"/>
+                                <rect x="11" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                                <rect x="1" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                                <rect x="11" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.5"/>
+                            </svg>
+                        </span>
+                        <span>
+                            <span class="logo-name">Business Calculator Hub</span>
+                            <span class="logo-sub">Free Finance Tools</span>
+                        </span>
+                    </a>
+                    <p>Free, accurate business calculators for entrepreneurs and small business owners.</p>
+                </div>
+                <div class="footer-nav">
+                    <div class="footer-col">
+                        <h4>Calculators</h4>
+                        <a href="profit-margin-calculator.html">Profit Margin</a>
+                        <a href="markup-calculator.html">Markup</a>
+                        <a href="pricing-calculator.html">Pricing</a>
+                        <a href="break-even-calculator.html">Break-Even</a>
+                        <a href="cac-calculator.html">CAC</a>
+                        <a href="ltv-calculator.html">LTV</a>
+                        <a href="roi-calculator.html">ROI</a>
+                        <a href="payback-period-calculator.html">Payback Period</a>
+                        <a href="churn-impact-calculator.html">Churn Impact</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <a href="guides/index.html">All Guides</a>
+                        <a href="guides/profit-margin-vs-markup.html">Margin vs Markup</a>
+                        <a href="guides/how-to-calculate-break-even.html">Break-Even Guide</a>
+                        <a href="guides/what-is-cac.html">What Is CAC?</a>
+                        <a href="guides/how-to-estimate-roi.html">Estimating ROI</a>
+                        <a href="guides/common-pricing-mistakes.html">Pricing Mistakes</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <a href="about.html">About</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Use</a>
+                        <a href="disclaimer.html">Disclaimer</a>
+                    </div>
+                </div>
             </div>
-            <p>&copy; <span id="current-year">2026</span> Business Calculator Hub. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2026</span> Business Calculator Hub. All rights reserved.</p>
+                <p>For informational purposes only. Not professional financial advice.</p>
+            </div>
         </div>
     </footer>
     <script src="assets/utils.js"></script>
     <script src="assets/calc-cac.js"></script>
 </body>
-
 </html>

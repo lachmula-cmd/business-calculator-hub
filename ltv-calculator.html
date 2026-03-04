@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LTV Calculator - Business Calculator Hub</title>
-    <meta name="description"
-        content="Calculate Customer Lifetime Value (LTV) to understand long-term customer profitability.">
+    <title>LTV Calculator — Calculate Customer Lifetime Value | Business Calculator Hub</title>
+    <meta name="description" content="Calculate Customer Lifetime Value (LTV) based on average revenue per user, gross margin, and monthly churn rate. Understand the long-term value of each customer and compare against your CAC.">
     <link rel="stylesheet" href="assets/styles.css">
-    <!-- ADSENSE PLACEHOLDER: Paste your script here -->
+    <link rel="stylesheet" href="assets/styles-extra.css">
+    <!-- ADSENSE PLACEHOLDER: Paste your AdSense script tag here -->
 </head>
-
 <body>
     <header>
         <div class="container nav-flex">
-            <a href="index.html" class="logo">📊 Business Calculator Hub</a>
-            <nav class="footer-links" style="margin-bottom: 0;">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">
+                    <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="1" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.9"/>
+                        <rect x="11" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                        <rect x="1" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                        <rect x="11" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.5"/>
+                    </svg>
+                </span>
+                <span>
+                    <span class="logo-name">Business Calculator Hub</span>
+                    <span class="logo-sub">Free Finance Tools</span>
+                </span>
+            </a>
+            <nav class="nav-links">
+                <a href="guides/index.html">Guides</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
             </nav>
@@ -23,7 +35,8 @@
     </header>
 
     <main class="container">
-        <h1>LTV Calculator</h1>
+        <h1>LTV Calculator — Customer Lifetime Value</h1>
+        <p class="page-intro">Customer Lifetime Value (LTV) is the total profit you can expect to generate from a single customer over the entire duration of their relationship with your business. It's the essential counterpart to Customer Acquisition Cost (CAC): while CAC tells you what a customer costs to acquire, LTV tells you what they're worth. Together, these two numbers determine whether your business model is economically sustainable.</p>
 
         <div class="calculator-wrapper">
             <div class="form-group">
@@ -38,22 +51,23 @@
             </div>
 
             <div class="form-group">
-                <label for="arpu">Average Revenue per User (ARPU) per month</label>
+                <label for="arpu">Average Revenue per User (ARPU) per Month</label>
                 <div class="input-suffix">
                     <input type="number" id="arpu" placeholder="e.g., 50" min="0">
                 </div>
+                <small class="help-text">The average amount a customer pays you per month. For subscription businesses, this is your average monthly subscription value.</small>
             </div>
 
             <div class="form-group">
-                <label for="gross-margin">Gross Margin %</label>
+                <label for="gross-margin">Gross Margin (%)</label>
                 <input type="number" id="gross-margin" placeholder="e.g., 70" min="0" max="100">
-                <small class="help-text">Input 70 for 70% margin.</small>
+                <small class="help-text">The percentage of revenue that remains after direct costs. Enter 70 for 70%. For SaaS, this is typically 60–80%. For e-commerce, it may be 20–50%.</small>
             </div>
 
             <div class="form-group">
-                <label for="churn">Monthly Churn Rate %</label>
+                <label for="churn">Monthly Churn Rate (%)</label>
                 <input type="number" id="churn" placeholder="e.g., 5" min="0.1" max="100" step="0.1">
-                <small class="help-text">Percentage of customers who leave each month.</small>
+                <small class="help-text">The percentage of customers who cancel or stop buying each month. Enter 5 for 5% monthly churn.</small>
             </div>
 
             <div class="btn-group">
@@ -62,69 +76,210 @@
             </div>
 
             <div class="result-box">
-                <div class="result-title">Lifetime Value (LTV)</div>
+                <div class="result-title">Customer Lifetime Value (LTV)</div>
                 <div class="result-value" id="result-ltv">-</div>
+                <small class="result-detail">Estimated total profit per customer over their lifetime</small>
 
                 <button id="copy-btn" class="btn btn-primary" style="margin-top: 20px;">Copy Results</button>
             </div>
         </div>
 
+        <!-- Ad Unit -->
         <div class="ad-placeholder">
-            <!-- ADSENSE PLACEHOLDER: MIDDLE BANNER -->
-            Advertisement
+            <!-- ADSENSE PLACEHOLDER: MIDDLE BANNER AD UNIT -->
         </div>
 
         <section>
-            <h2>How to use</h2>
+            <h2>What Is Customer Lifetime Value (LTV)?</h2>
+            <p>Customer Lifetime Value (also written as CLV or CLTV) is a prediction of the total net profit a business can expect from a single customer account throughout the business relationship. It shifts the focus from individual transactions to the long-term value of customer relationships.</p>
+            <p>LTV is particularly important for subscription and recurring revenue businesses — SaaS companies, subscription boxes, membership sites, and any business where customers pay repeatedly over time. But it's also relevant for any business where customers make repeat purchases, because the value of a customer is not just their first order.</p>
+            <p>Understanding LTV helps you answer critical questions: How much can you afford to spend to acquire a customer? Which customer segments are most valuable? How much does reducing churn by 1% actually improve your economics?</p>
+        </section>
+
+        <section>
+            <h2>How It Works</h2>
+            <p>This calculator uses the standard LTV formula for subscription and recurring revenue businesses. You need three inputs:</p>
             <ul>
-                <li><strong>ARPU:</strong> Average amount a customer pays you per month.</li>
-                <li><strong>Gross Margin:</strong> The percentage of that revenue that is profit.</li>
-                <li><strong>Churn Rate:</strong> The percentage of customers cancelling each month.</li>
+                <li><strong>Average Revenue per User (ARPU) per Month:</strong> The average monthly revenue generated by a single customer. For a subscription business, this is your average monthly plan value. For a business with variable purchase frequency, calculate it as total monthly revenue divided by total active customers.</li>
+                <li><strong>Gross Margin %:</strong> The percentage of revenue that remains after subtracting direct costs (cost of goods sold). This converts revenue into profit — because LTV should measure profit, not just revenue. A SaaS business might have 75% gross margin; an e-commerce business might have 35%.</li>
+                <li><strong>Monthly Churn Rate %:</strong> The percentage of customers who leave each month. A 5% monthly churn rate means 5 out of every 100 customers cancel each month. This determines the average customer lifespan (1 ÷ churn rate).</li>
             </ul>
         </section>
 
         <section>
-            <h2>FAQ</h2>
-            <h3>What is LTV?</h3>
-            <p>Lifetime Value (LTV) predicts the net profit attributed to the entire future relationship with a
-                customer.</p>
-
-            <h3>Formula</h3>
-            <p><code>LTV = (ARPU * Gross Margin %) / Churn Rate %</code></p>
+            <h2>Formula</h2>
+            <div class="formula-box">
+                <strong>Average Customer Lifespan (months)</strong>
+                Lifespan = 1 ÷ Monthly Churn Rate (as a decimal)
+            </div>
+            <div class="formula-box">
+                <strong>Customer Lifetime Value Formula</strong>
+                LTV = (ARPU × Gross Margin %) ÷ Monthly Churn Rate %
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-light);">Note: Both Gross Margin % and Monthly Churn Rate % should be entered as percentages (e.g., 70 and 5). The calculator converts them to decimals internally.</p>
         </section>
 
-        <section style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
+        <section>
+            <h2>Example Calculation</h2>
+            <div class="example-box">
+                <strong>Worked Example — SaaS Business</strong>
+                <p>A project management SaaS has an average monthly subscription of <strong>$60 per user</strong>. Their gross margin is <strong>72%</strong> (after hosting, support, and infrastructure costs). Their monthly churn rate is <strong>4%</strong>.</p>
+                <p>Average Customer Lifespan = 1 ÷ 0.04 = <strong>25 months</strong></p>
+                <p>LTV = ($60 × 0.72) ÷ 0.04 = $43.20 ÷ 0.04 = <strong>$1,080</strong></p>
+                <p>If their CAC is $200, their LTV:CAC ratio is 5.4:1 — a healthy, sustainable business. If they can reduce churn from 4% to 3%, LTV rises to $1,440 — a 33% improvement from a 1% churn reduction.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>When to Use This Calculator</h2>
+            <ul>
+                <li><strong>When setting your CAC budget</strong> — LTV tells you the maximum you can afford to spend to acquire a customer while remaining profitable. A common rule of thumb is to keep CAC below one-third of LTV.</li>
+                <li><strong>When evaluating the impact of churn reduction</strong> — even a small reduction in churn can dramatically increase LTV. Use this calculator to quantify the value of retention initiatives.</li>
+                <li><strong>When comparing customer segments</strong> — calculate LTV separately for different customer types (e.g., small business vs. enterprise) to understand which segments are most valuable.</li>
+                <li><strong>When forecasting revenue</strong> — LTV multiplied by the number of customers acquired gives you a long-term revenue projection.</li>
+                <li><strong>When pitching to investors</strong> — LTV:CAC ratio is one of the first metrics growth investors look at. A ratio of 3:1 or higher is typically required for a fundable business.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Common Mistakes</h2>
+            <ul>
+                <li><strong>Using revenue instead of gross margin.</strong> LTV should measure profit, not revenue. If you use revenue without applying your gross margin, you'll overstate LTV and potentially overspend on acquisition. Always apply your gross margin percentage.</li>
+                <li><strong>Using an unrealistically low churn rate.</strong> It's tempting to use your best-month churn rate. Use your average over the past 6–12 months for a more accurate picture. Optimistic churn assumptions lead to inflated LTV and poor acquisition decisions.</li>
+                <li><strong>Not accounting for expansion revenue.</strong> This formula assumes ARPU is constant. In reality, customers may upgrade over time (expansion revenue), which increases LTV. If your business has significant upsell/cross-sell, your actual LTV may be higher than this formula suggests.</li>
+                <li><strong>Treating LTV as a fixed number.</strong> LTV changes as your churn rate, pricing, and gross margin change. Recalculate it regularly — at least quarterly — and track the trend over time.</li>
+                <li><strong>Ignoring the time value of money.</strong> This formula does not discount future cash flows. For businesses with very long customer lifespans, a discounted LTV calculation may be more appropriate.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>How to Interpret Your Result</h2>
+            <p>LTV is most meaningful when compared to your Customer Acquisition Cost (CAC). The <strong>LTV:CAC ratio</strong> is the key metric:</p>
+            <ul>
+                <li><strong>LTV:CAC below 1:1</strong> — You are losing money on every customer acquired. Unsustainable.</li>
+                <li><strong>LTV:CAC of 1:1 to 2:1</strong> — Barely breaking even. Very little room for overhead, growth investment, or error.</li>
+                <li><strong>LTV:CAC of 3:1</strong> — The widely cited benchmark for a healthy, sustainable business. This is the minimum most investors look for.</li>
+                <li><strong>LTV:CAC of 5:1 or higher</strong> — Strong unit economics. You may be underinvesting in growth — you could afford to spend more on acquisition.</li>
+            </ul>
+            <p>Also pay attention to how sensitive your LTV is to churn. A small improvement in churn rate often has a disproportionately large impact on LTV. Use the <a href="churn-impact-calculator.html">Churn Impact Calculator</a> to visualise this effect over 12 months.</p>
+
+            <div class="info-box">
+                <strong>💡 The Power of Churn Reduction</strong>
+                Reducing monthly churn from 5% to 4% increases average customer lifespan from 20 months to 25 months — a 25% increase. This directly increases LTV by 25%. Retention is often more cost-effective than acquisition.
+            </div>
+        </section>
+
+        <section>
+            <h2>Frequently Asked Questions</h2>
+
+            <h3>What is the difference between LTV and CLV?</h3>
+            <p>They are the same metric — Customer Lifetime Value. LTV (Lifetime Value) and CLV (Customer Lifetime Value) are used interchangeably. Some sources also use CLTV. The formula and concept are identical regardless of the abbreviation used.</p>
+
+            <h3>Can I use this calculator for a non-subscription business?</h3>
+            <p>Yes, with some adaptation. For a non-subscription business, calculate your average monthly revenue per active customer (total monthly revenue ÷ number of active customers) and use that as your ARPU. For churn, estimate the percentage of customers who don't make a repeat purchase within a typical period. The result will be an approximation, but still useful for directional decision-making.</p>
+
+            <h3>What gross margin should I use?</h3>
+            <p>Use your gross margin — revenue minus cost of goods sold, divided by revenue. For SaaS businesses, this is typically 60–80%. For e-commerce, 20–50%. For professional services, 50–70%. Do not use net margin (which includes overhead) — the formula already accounts for the fact that overhead is covered separately.</p>
+
+            <h3>How does churn rate affect LTV?</h3>
+            <p>Churn has a dramatic effect on LTV because it determines the average customer lifespan. At 10% monthly churn, the average customer stays for 10 months. At 5% churn, they stay for 20 months. At 2% churn, they stay for 50 months. Halving your churn rate doubles your average customer lifespan and roughly doubles your LTV. This is why retention is so valuable.</p>
+
+            <h3>What if my ARPU changes over time?</h3>
+            <p>This formula assumes a constant ARPU. If your customers tend to upgrade over time (expansion revenue), your actual LTV will be higher. If they tend to downgrade, it will be lower. For a more precise calculation, you would need to model the expected revenue trajectory of a cohort of customers over time — which is beyond the scope of this calculator but is the approach used by more sophisticated financial models.</p>
+        </section>
+
+        <p class="disclaimer-note">Disclaimer: This calculator provides estimates for informational purposes only. LTV calculations are based on simplified assumptions and the inputs you provide. Actual customer value will vary based on many factors not captured in this formula. Consult a qualified financial or business analyst for comprehensive customer economics analysis.</p>
+
+        <hr class="section-divider">
+
+        <section>
             <h3>Related Calculators</h3>
             <div class="grid">
                 <div class="card">
                     <h3>CAC Calculator</h3>
-                    <p>Calculate customer acquisition cost.</p>
-                    <a href="cac-calculator.html" class="btn-link">Go &rarr;</a>
+                    <p>Calculate your Customer Acquisition Cost and compare it to your LTV to assess business health.</p>
+                    <a href="cac-calculator.html" class="btn-link">Calculate CAC &rarr;</a>
                 </div>
                 <div class="card">
                     <h3>Churn Impact Calculator</h3>
-                    <p>Visualize churn over time.</p>
-                    <a href="churn-impact-calculator.html" class="btn-link">Go &rarr;</a>
+                    <p>Visualise how your monthly churn rate affects your customer base over 12 months.</p>
+                    <a href="churn-impact-calculator.html" class="btn-link">Analyse Churn &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>ROI Calculator</h3>
+                    <p>Measure the return on investment for your marketing and acquisition spend.</p>
+                    <a href="roi-calculator.html" class="btn-link">Calculate ROI &rarr;</a>
                 </div>
             </div>
         </section>
 
+        <section>
+            <h3>Related Guides</h3>
+            <ul>
+                <li><a href="guides/what-is-cac.html">What Is Customer Acquisition Cost (CAC)? — Includes LTV:CAC Ratio Explained</a></li>
+            </ul>
+        </section>
     </main>
 
     <footer>
         <div class="container">
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Use</a>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="margin-bottom:16px;display:inline-flex;">
+                        <span class="logo-icon">
+                            <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="1" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.9"/>
+                                <rect x="11" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                                <rect x="1" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                                <rect x="11" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.5"/>
+                            </svg>
+                        </span>
+                        <span>
+                            <span class="logo-name">Business Calculator Hub</span>
+                            <span class="logo-sub">Free Finance Tools</span>
+                        </span>
+                    </a>
+                    <p>Free, accurate business calculators for entrepreneurs and small business owners.</p>
+                </div>
+                <div class="footer-nav">
+                    <div class="footer-col">
+                        <h4>Calculators</h4>
+                        <a href="profit-margin-calculator.html">Profit Margin</a>
+                        <a href="markup-calculator.html">Markup</a>
+                        <a href="pricing-calculator.html">Pricing</a>
+                        <a href="break-even-calculator.html">Break-Even</a>
+                        <a href="cac-calculator.html">CAC</a>
+                        <a href="ltv-calculator.html">LTV</a>
+                        <a href="roi-calculator.html">ROI</a>
+                        <a href="payback-period-calculator.html">Payback Period</a>
+                        <a href="churn-impact-calculator.html">Churn Impact</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <a href="guides/index.html">All Guides</a>
+                        <a href="guides/profit-margin-vs-markup.html">Margin vs Markup</a>
+                        <a href="guides/how-to-calculate-break-even.html">Break-Even Guide</a>
+                        <a href="guides/what-is-cac.html">What Is CAC?</a>
+                        <a href="guides/how-to-estimate-roi.html">Estimating ROI</a>
+                        <a href="guides/common-pricing-mistakes.html">Pricing Mistakes</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <a href="about.html">About</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Use</a>
+                        <a href="disclaimer.html">Disclaimer</a>
+                    </div>
+                </div>
             </div>
-            <p>&copy; <span id="current-year">2026</span> Business Calculator Hub. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2026</span> Business Calculator Hub. All rights reserved.</p>
+                <p>For informational purposes only. Not professional financial advice.</p>
+            </div>
         </div>
     </footer>
     <script src="assets/utils.js"></script>
     <script src="assets/calc-ltv.js"></script>
 </body>
-
 </html>

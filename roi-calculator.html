@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROI Calculator - Business Calculator Hub</title>
-    <meta name="description"
-        content="Calculate Return on Investment (ROI) percentage to evaluate efficiency of an investment.">
+    <title>ROI Calculator — Calculate Return on Investment | Business Calculator Hub</title>
+    <meta name="description" content="Calculate Return on Investment (ROI) percentage for any business expense, campaign, or project. Enter your total gain and cost to instantly see your ROI % and net profit.">
     <link rel="stylesheet" href="assets/styles.css">
-    <!-- ADSENSE PLACEHOLDER: Paste your script here -->
+    <link rel="stylesheet" href="assets/styles-extra.css">
+    <!-- ADSENSE PLACEHOLDER: Paste your AdSense script tag here -->
 </head>
-
 <body>
     <header>
         <div class="container nav-flex">
-            <a href="index.html" class="logo">📊 Business Calculator Hub</a>
-            <nav class="footer-links" style="margin-bottom: 0;">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">
+                    <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="1" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.9"/>
+                        <rect x="11" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                        <rect x="1" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                        <rect x="11" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.5"/>
+                    </svg>
+                </span>
+                <span>
+                    <span class="logo-name">Business Calculator Hub</span>
+                    <span class="logo-sub">Free Finance Tools</span>
+                </span>
+            </a>
+            <nav class="nav-links">
+                <a href="guides/index.html">Guides</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
             </nav>
@@ -23,7 +35,8 @@
     </header>
 
     <main class="container">
-        <h1>ROI Calculator</h1>
+        <h1>ROI Calculator — Return on Investment</h1>
+        <p class="page-intro">Return on Investment (ROI) is one of the most universally used metrics in business. It measures how much you gained relative to what you spent — expressed as a percentage. Whether you're evaluating a marketing campaign, a piece of equipment, a new hire, or a business expansion, ROI gives you a simple, comparable number to judge whether the investment was worth it. This calculator gives you your ROI percentage and net profit instantly.</p>
 
         <div class="calculator-wrapper">
             <div class="form-group">
@@ -38,17 +51,19 @@
             </div>
 
             <div class="form-group">
-                <label for="gain">Amount Gained (Revenue)</label>
+                <label for="gain">Total Amount Gained (Revenue or Return)</label>
                 <div class="input-suffix">
-                    <input type="number" id="gain" placeholder="Total money returned" min="0" step="0.01">
+                    <input type="number" id="gain" placeholder="e.g., 15000" min="0" step="0.01">
                 </div>
+                <small class="help-text">The total value returned by the investment — revenue generated, money saved, or asset value at exit. Include all returns, not just profit.</small>
             </div>
 
             <div class="form-group">
-                <label for="cost">Amount Invested (Cost)</label>
+                <label for="cost">Total Amount Invested (Cost)</label>
                 <div class="input-suffix">
-                    <input type="number" id="cost" placeholder="Total initial investment" min="0" step="0.01">
+                    <input type="number" id="cost" placeholder="e.g., 5000" min="0" step="0.01">
                 </div>
+                <small class="help-text">The total cost of the investment — everything you spent to generate the return above.</small>
             </div>
 
             <div class="btn-group">
@@ -67,62 +82,211 @@
             </div>
         </div>
 
+        <!-- Ad Unit -->
         <div class="ad-placeholder">
-            <!-- ADSENSE PLACEHOLDER: MIDDLE BANNER -->
-            Advertisement
+            <!-- ADSENSE PLACEHOLDER: MIDDLE BANNER AD UNIT -->
         </div>
 
         <section>
-            <h2>How to use</h2>
+            <h2>What Is Return on Investment (ROI)?</h2>
+            <p>Return on Investment (ROI) is a performance metric used to evaluate the efficiency or profitability of an investment. It compares the net profit from an investment to the cost of that investment, expressed as a percentage. A positive ROI means the investment generated more than it cost. A negative ROI means it lost money.</p>
+            <p>ROI is popular because it's simple, intuitive, and comparable across very different types of investments. You can use the same formula to evaluate a $500 Facebook ad campaign and a $500,000 factory expansion — and compare the results directly. This makes it an invaluable tool for prioritising where to allocate limited resources.</p>
+            <p>However, ROI has limitations. It doesn't account for the time value of money (a 50% ROI over 10 years is very different from a 50% ROI over 1 month), and it doesn't capture risk. For long-term investments, metrics like NPV (Net Present Value) or IRR (Internal Rate of Return) may be more appropriate.</p>
+        </section>
+
+        <section>
+            <h2>How It Works</h2>
+            <p>Enter two values:</p>
             <ul>
-                <li>Enter the total amount gained from the investment.</li>
-                <li>Enter the total cost of the investment.</li>
-                <li>The calculator will determine the ROI percentage.</li>
+                <li><strong>Total Amount Gained:</strong> The total value returned by the investment. For a marketing campaign, this is the revenue generated by that campaign. For an equipment purchase, it might be the revenue enabled by that equipment, or the cost savings it produced. For a financial investment, it's the current value of the asset plus any income received.</li>
+                <li><strong>Total Amount Invested:</strong> Everything you spent to generate that return. For a marketing campaign, this includes ad spend, agency fees, creative costs, and any tools used. For equipment, it's the purchase price plus installation and training. Be thorough — missing costs will inflate your ROI.</li>
+            </ul>
+            <p>The calculator subtracts cost from gain to find net profit, then divides net profit by cost to give you the ROI percentage.</p>
+        </section>
+
+        <section>
+            <h2>Formula</h2>
+            <div class="formula-box">
+                <strong>Net Profit</strong>
+                Net Profit = Total Amount Gained − Total Amount Invested
+            </div>
+            <div class="formula-box">
+                <strong>Return on Investment (ROI) Formula</strong>
+                ROI % = (Net Profit ÷ Total Amount Invested) × 100
+            </div>
+        </section>
+
+        <section>
+            <h2>Example Calculation</h2>
+            <div class="example-box">
+                <strong>Worked Example — Marketing Campaign</strong>
+                <p>A business runs a Google Ads campaign. Total spend (ad budget + agency fee + landing page design) = <strong>$3,500</strong>. The campaign generated <strong>$11,200</strong> in attributed revenue.</p>
+                <p>Net Profit = $11,200 − $3,500 = <strong>$7,700</strong></p>
+                <p>ROI = ($7,700 ÷ $3,500) × 100 = <strong>220%</strong></p>
+                <p>For every $1 spent on this campaign, the business got back $3.20 — a strong result. The business can now compare this to other campaigns or channels to decide where to invest more.</p>
+            </div>
+
+            <div class="example-box" style="margin-top: 20px;">
+                <strong>Worked Example — Equipment Purchase</strong>
+                <p>A manufacturer buys a machine for <strong>$25,000</strong> (including installation and training). Over the first year, the machine enables <strong>$38,000</strong> in additional production revenue.</p>
+                <p>Net Profit = $38,000 − $25,000 = <strong>$13,000</strong></p>
+                <p>ROI = ($13,000 ÷ $25,000) × 100 = <strong>52%</strong></p>
+                <p>A 52% first-year ROI on a capital investment is strong. The machine paid for itself in under 2 years. Use the <a href="payback-period-calculator.html">Payback Period Calculator</a> to calculate the exact payback timeline.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>When to Use This Calculator</h2>
+            <ul>
+                <li><strong>Evaluating marketing campaigns</strong> — compare the ROI of different channels (paid search, social, email, events) to allocate budget to the highest-performing ones</li>
+                <li><strong>Justifying a capital expenditure</strong> — before purchasing equipment, software, or other assets, project the expected ROI to build the business case</li>
+                <li><strong>Reviewing past investments</strong> — after a project or campaign, calculate the actual ROI to learn what worked and what didn't</li>
+                <li><strong>Comparing investment options</strong> — when you have multiple ways to spend a budget, ROI gives you a common metric to compare them</li>
+                <li><strong>Hiring decisions</strong> — estimate the revenue impact of a new hire versus their total cost (salary, benefits, equipment, onboarding) to assess the ROI of the hire</li>
             </ul>
         </section>
 
         <section>
-            <h2>FAQ</h2>
-            <h3>What is ROI?</h3>
-            <p>ROI (Return on Investment) measures the gain or loss generated on an investment relative to the amount of
-                money invested. It is usually expressed as a percentage.</p>
-
-            <h3>Formula used</h3>
-            <p><code>ROI = ((Net Profit) / Cost of Investment) * 100</code></p>
+            <h2>Common Mistakes</h2>
+            <ul>
+                <li><strong>Forgetting to include all costs.</strong> ROI is only as accurate as your cost figure. For a marketing campaign, don't just include ad spend — include agency fees, creative production, tools, and the time cost of internal staff. Incomplete costs inflate ROI.</li>
+                <li><strong>Attributing all revenue to a single investment.</strong> In marketing, it's rarely one campaign that drives a sale — customers often interact with multiple touchpoints. Be careful about attributing 100% of revenue to a single campaign unless you have clear attribution data.</li>
+                <li><strong>Ignoring the time dimension.</strong> A 100% ROI over 5 years is very different from a 100% ROI over 6 months. When comparing investments with different time horizons, annualise the ROI or use a time-adjusted metric like IRR.</li>
+                <li><strong>Confusing ROI with profit margin.</strong> ROI is calculated on the cost of the investment. Profit margin is calculated on revenue. They measure different things and should not be used interchangeably.</li>
+                <li><strong>Using ROI as the only decision criterion.</strong> A high ROI on a small investment may be less valuable than a moderate ROI on a large investment. Consider both ROI percentage and absolute net profit when making decisions.</li>
+            </ul>
         </section>
 
-        <section style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
+        <section>
+            <h2>How to Interpret Your Result</h2>
+            <p>ROI benchmarks vary by investment type and industry, but here are general guidelines:</p>
+            <ul>
+                <li><strong>Negative ROI:</strong> The investment lost money. Investigate why before repeating it.</li>
+                <li><strong>0–10%:</strong> Low return. May be acceptable for very low-risk investments or those with strategic value beyond the financial return.</li>
+                <li><strong>10–30%:</strong> Moderate return. Acceptable for many business investments, especially capital expenditures with multi-year payback periods.</li>
+                <li><strong>30–100%:</strong> Good return. Strong performance for most marketing campaigns and operational investments.</li>
+                <li><strong>100%+:</strong> Excellent return. Common for well-optimised digital marketing campaigns and high-leverage business activities.</li>
+            </ul>
+            <p>Always compare ROI against your cost of capital (what it costs you to fund the investment) and against alternative uses of the same money. An investment with a 20% ROI is excellent if your cost of capital is 8%, but poor if you have another opportunity offering 40%.</p>
+
+            <div class="info-box">
+                <strong>💡 ROI vs. Payback Period</strong>
+                ROI tells you how much you made relative to what you spent. Payback period tells you how long it takes to get your money back. Both are useful — use the <a href="payback-period-calculator.html">Payback Period Calculator</a> alongside this one for a complete picture.
+            </div>
+        </section>
+
+        <section>
+            <h2>Frequently Asked Questions</h2>
+
+            <h3>What is a good ROI for a marketing campaign?</h3>
+            <p>For digital marketing, an ROI of 100–300% (i.e., $2–$4 returned for every $1 spent) is generally considered good. Email marketing typically achieves the highest ROI of any digital channel — often 3,000–4,000% — because the cost is very low. Paid advertising ROI varies widely by industry, competition, and campaign quality. The key is to benchmark against your own historical performance and your cost of capital.</p>
+
+            <h3>How do I calculate ROI for a hire?</h3>
+            <p>Estimate the total annual cost of the hire (salary + benefits + equipment + onboarding + management time). Then estimate the annual revenue or cost savings they will generate. Apply the ROI formula: (Revenue Generated − Total Cost) ÷ Total Cost × 100. This is inherently an estimate, but it forces you to think clearly about the expected value of the hire before committing.</p>
+
+            <h3>What is the difference between ROI and ROAS?</h3>
+            <p>ROAS (Return on Ad Spend) is a marketing-specific metric that divides revenue by ad spend only — it doesn't subtract costs. A ROAS of 4x means you generated $4 in revenue for every $1 in ad spend. ROI is more comprehensive because it accounts for all costs and measures profit, not just revenue. ROAS is useful for comparing ad campaigns; ROI is better for evaluating overall investment profitability.</p>
+
+            <h3>Can ROI be more than 100%?</h3>
+            <p>Yes, absolutely. An ROI of 200% means you made twice your investment back in profit — you tripled your money (got back your original investment plus 200% profit). There is no upper limit to ROI. Well-optimised digital campaigns, software products, and high-margin services can achieve very high ROI percentages.</p>
+
+            <h3>How does ROI relate to payback period?</h3>
+            <p>They are complementary metrics. ROI tells you the total return as a percentage of cost. Payback period tells you how long it takes to recover the initial investment. A high ROI with a long payback period may be less attractive than a moderate ROI with a short payback period, depending on your cash flow needs. Use both together for a complete picture.</p>
+        </section>
+
+        <p class="disclaimer-note">Disclaimer: This calculator provides estimates for informational purposes only. ROI calculations are based on the inputs you provide and do not account for the time value of money, risk, or other factors relevant to investment decisions. Consult a qualified financial advisor before making significant investment decisions.</p>
+
+        <hr class="section-divider">
+
+        <section>
             <h3>Related Calculators</h3>
             <div class="grid">
                 <div class="card">
                     <h3>Payback Period Calculator</h3>
-                    <p>Time to recover investment.</p>
-                    <a href="payback-period-calculator.html" class="btn-link">Go &rarr;</a>
+                    <p>Find out how many months it takes to recover your initial investment from monthly cash flow.</p>
+                    <a href="payback-period-calculator.html" class="btn-link">Calculate Payback &rarr;</a>
                 </div>
                 <div class="card">
                     <h3>Profit Margin Calculator</h3>
-                    <p>Calculate margins on sales.</p>
-                    <a href="profit-margin-calculator.html" class="btn-link">Go &rarr;</a>
+                    <p>Calculate the gross profit and margin percentage on your products or services.</p>
+                    <a href="profit-margin-calculator.html" class="btn-link">Calculate Margin &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>CAC Calculator</h3>
+                    <p>Calculate your Customer Acquisition Cost to evaluate marketing efficiency.</p>
+                    <a href="cac-calculator.html" class="btn-link">Calculate CAC &rarr;</a>
                 </div>
             </div>
         </section>
 
+        <section>
+            <h3>Related Guides</h3>
+            <ul>
+                <li><a href="guides/how-to-estimate-roi.html">How to Estimate ROI Before You Spend</a></li>
+                <li><a href="guides/what-is-cac.html">What Is Customer Acquisition Cost (CAC)?</a></li>
+            </ul>
+        </section>
     </main>
 
     <footer>
         <div class="container">
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Use</a>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="margin-bottom:16px;display:inline-flex;">
+                        <span class="logo-icon">
+                            <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="1" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.9"/>
+                                <rect x="11" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                                <rect x="1" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                                <rect x="11" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.5"/>
+                            </svg>
+                        </span>
+                        <span>
+                            <span class="logo-name">Business Calculator Hub</span>
+                            <span class="logo-sub">Free Finance Tools</span>
+                        </span>
+                    </a>
+                    <p>Free, accurate business calculators for entrepreneurs and small business owners.</p>
+                </div>
+                <div class="footer-nav">
+                    <div class="footer-col">
+                        <h4>Calculators</h4>
+                        <a href="profit-margin-calculator.html">Profit Margin</a>
+                        <a href="markup-calculator.html">Markup</a>
+                        <a href="pricing-calculator.html">Pricing</a>
+                        <a href="break-even-calculator.html">Break-Even</a>
+                        <a href="cac-calculator.html">CAC</a>
+                        <a href="ltv-calculator.html">LTV</a>
+                        <a href="roi-calculator.html">ROI</a>
+                        <a href="payback-period-calculator.html">Payback Period</a>
+                        <a href="churn-impact-calculator.html">Churn Impact</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <a href="guides/index.html">All Guides</a>
+                        <a href="guides/profit-margin-vs-markup.html">Margin vs Markup</a>
+                        <a href="guides/how-to-calculate-break-even.html">Break-Even Guide</a>
+                        <a href="guides/what-is-cac.html">What Is CAC?</a>
+                        <a href="guides/how-to-estimate-roi.html">Estimating ROI</a>
+                        <a href="guides/common-pricing-mistakes.html">Pricing Mistakes</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <a href="about.html">About</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Use</a>
+                        <a href="disclaimer.html">Disclaimer</a>
+                    </div>
+                </div>
             </div>
-            <p>&copy; <span id="current-year">2026</span> Business Calculator Hub. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2026</span> Business Calculator Hub. All rights reserved.</p>
+                <p>For informational purposes only. Not professional financial advice.</p>
+            </div>
         </div>
     </footer>
     <script src="assets/utils.js"></script>
     <script src="assets/calc-roi.js"></script>
 </body>
-
 </html>

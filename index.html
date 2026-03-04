@@ -3,110 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Calculator Hub - Free Finance & Growth Tools</title>
-    <meta name="description" content="Free, fast, and privacy-focused business calculators for entrepreneurs, founders, and managers. Calculate Profit Margin, ROI, Break-Even, and more instanty.">
+    <title>Business Calculator Hub — Free Finance & Growth Calculators for Entrepreneurs</title>
+    <meta name="description" content="Free, fast, and privacy-focused business calculators for entrepreneurs, founders, and managers. Calculate Profit Margin, ROI, Break-Even, CAC, LTV, and more. No sign-up required.">
     <link rel="stylesheet" href="assets/styles.css">
-    <!-- Google AdSense Auto Ads -->
-    <!-- ADSENSE PLACEHOLDER: Paste your script here -->
+    <link rel="stylesheet" href="assets/styles-extra.css">
+    <!-- ADSENSE PLACEHOLDER: Paste your AdSense script tag here -->
 </head>
 <body>
 
+    <!-- ===== NAVIGATION ===== -->
     <header>
         <div class="container nav-flex">
             <a href="index.html" class="logo">
-                📊 Business Calculator Hub
+                <span class="logo-icon">
+                    <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="1" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.9"/>
+                        <rect x="11" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                        <rect x="1" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                        <rect x="11" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.5"/>
+                    </svg>
+                </span>
+                <span>
+                    <span class="logo-name">Business Calculator Hub</span>
+                    <span class="logo-sub">Free Finance Tools</span>
+                </span>
             </a>
-            <nav class="footer-links" style="margin-bottom: 0;">
+            <nav class="nav-links">
+                <a href="guides/index.html">Guides</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
             </nav>
         </div>
     </header>
 
-    <main class="container">
-        <div style="text-align: center; margin-bottom: 40px;">
-            <h1>Grow Your Business with Better Numbers</h1>
-            <p style="font-size: 1.2rem; color: var(--text-light); max-width: 600px; margin: 0 auto;">
-                High-intent financial tools to help you price products, track growth, and plan for the future. No sign-up required.
-            </p>
+    <!-- ===== HERO ===== -->
+    <section class="hero-section">
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+        <div class="hero-glow hero-glow-3"></div>
+        <div class="hero-content">
+            <div class="hero-eyebrow">
+                <span class="eyebrow-dot"></span>
+                Free Business Finance Tools
+            </div>
+            <h1>Make Better Business Decisions<br><span class="gradient-text">with Accurate Numbers</span></h1>
+            <p class="hero-sub">Free, instant calculators for pricing, profit, growth, and investment. Built for entrepreneurs and small business owners — no sign-up, no clutter, no cost.</p>
+            <div class="hero-cta">
+                <a href="#calculators" class="btn btn-primary btn-lg">Explore Calculators</a>
+                <a href="guides/index.html" class="btn btn-ghost btn-lg">Read the Guides</a>
+            </div>
+            <div class="hero-badges">
+                <span class="hero-badge">✓ No sign-up required</span>
+                <span class="hero-badge">✓ Runs in your browser</span>
+                <span class="hero-badge">✓ Free forever</span>
+                <span class="hero-badge">✓ 9 calculators</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TRUST STRIP ===== -->
+    <div class="trust-strip">
+        <div class="trust-item">
+            <div class="trust-icon-wrap">🔒</div>
+            <div>
+                <div class="trust-title">Privacy First</div>
+                <div class="trust-desc">Your data never leaves your device</div>
+            </div>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon-wrap">⚡</div>
+            <div>
+                <div class="trust-title">Instant Results</div>
+                <div class="trust-desc">No loading, no waiting</div>
+            </div>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon-wrap">📐</div>
+            <div>
+                <div class="trust-title">Standard Formulas</div>
+                <div class="trust-desc">Used by finance professionals</div>
+            </div>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon-wrap">📱</div>
+            <div>
+                <div class="trust-title">Any Device</div>
+                <div class="trust-desc">Desktop, tablet, or mobile</div>
+            </div>
+        </div>
+    </div>
+
+    <main class="container" id="calculators">
+
+        <!-- Ad Placeholder -->
+        <div class="ad-placeholder"><!-- ADSENSE PLACEHOLDER: TOP BANNER AD UNIT --></div>
+
+        <!-- ===== SALES & REVENUE ===== -->
+        <div class="section-header">
+            <div class="section-eyebrow">Sales &amp; Revenue</div>
+            <h2>Pricing &amp; Profit Tools</h2>
+            <p>Price products correctly, understand your margins, and ensure every sale is profitable.</p>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h3>Profit Margin Calculator</h3>
+                <p>Calculate your gross profit and profit margin percentage. Understand how much of every sale you actually keep after covering the cost of goods.</p>
+                <a href="profit-margin-calculator.html" class="btn-link">Calculate Margin →</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">🏷️</div>
+                <h3>Markup Calculator</h3>
+                <p>Determine the markup percentage you're applying to your products. Understand the critical difference between markup and margin to avoid underpricing.</p>
+                <a href="markup-calculator.html" class="btn-link">Calculate Markup →</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">💰</div>
+                <h3>Pricing Calculator</h3>
+                <p>Find the right selling price that covers your unit costs, monthly overhead, and delivers your target profit margin. Includes overhead allocation.</p>
+                <a href="pricing-calculator.html" class="btn-link">Set Your Price →</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">⚖️</div>
+                <h3>Break-Even Calculator</h3>
+                <p>Find out exactly how many units you need to sell to cover all your costs. Know your minimum performance threshold before you start losing money.</p>
+                <a href="break-even-calculator.html" class="btn-link">Find Break-Even →</a>
+            </div>
+        </div>
+
+        <!-- ===== GROWTH & MARKETING ===== -->
+        <div class="section-header">
+            <div class="section-eyebrow">Growth &amp; Marketing</div>
+            <h2>Customer Economics</h2>
+            <p>Metrics that tell you whether your customer acquisition and retention strategy is economically sustainable.</p>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">🎯</div>
+                <h3>CAC Calculator</h3>
+                <p>Calculate your Customer Acquisition Cost — how much you spend on sales and marketing to win each new customer. Essential for evaluating marketing efficiency.</p>
+                <a href="cac-calculator.html" class="btn-link">Calculate CAC →</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">♾️</div>
+                <h3>LTV Calculator</h3>
+                <p>Estimate the Lifetime Value of a customer based on revenue, gross margin, and churn rate. Compare against CAC to assess the health of your business model.</p>
+                <a href="ltv-calculator.html" class="btn-link">Calculate LTV →</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">📉</div>
+                <h3>Churn Impact Calculator</h3>
+                <p>Visualise how your monthly churn rate affects your customer base over 12 months. See the "leaky bucket" effect and quantify the value of improving retention.</p>
+                <a href="churn-impact-calculator.html" class="btn-link">Analyse Churn →</a>
+            </div>
+        </div>
+
+        <!-- ===== INVESTMENT & RETURNS ===== -->
+        <div class="section-header">
+            <div class="section-eyebrow">Investment &amp; Returns</div>
+            <h2>ROI &amp; Payback Tools</h2>
+            <p>Evaluate whether a business investment, campaign, or capital expenditure is worth making.</p>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">📈</div>
+                <h3>ROI Calculator</h3>
+                <p>Measure the Return on Investment for any business expense, marketing campaign, or capital purchase. Get your ROI percentage and net profit instantly.</p>
+                <a href="roi-calculator.html" class="btn-link">Calculate ROI →</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">⏱️</div>
+                <h3>Payback Period Calculator</h3>
+                <p>Determine how many months it will take to recover your initial investment from monthly net cash flow. Essential for evaluating equipment and capital expenditures.</p>
+                <a href="payback-period-calculator.html" class="btn-link">Calculate Payback →</a>
+            </div>
         </div>
 
         <!-- Ad Placeholder -->
-        <div class="ad-placeholder">
-            <!-- ADSENSE PLACEHOLDER: TOP BANNER -->
-            Advertisement Space
-        </div>
+        <div class="ad-placeholder"><!-- ADSENSE PLACEHOLDER: MID-PAGE AD UNIT --></div>
 
-        <h2>Sales & Revenue</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Profit Margin Calculator</h3>
-                <p>Calculate your gross and net profit margins to ensure your pricing strategy is sustainable.</p>
-                <a href="profit-margin-calculator.html" class="btn-link">Calculate Margin &rarr;</a>
-            </div>
-            <div class="card">
-                <h3>Markup Calculator</h3>
-                <p>Determine the perfect selling price based on your cost and desired markup percentage.</p>
-                <a href="markup-calculator.html" class="btn-link">Calculate Markup &rarr;</a>
-            </div>
-            <div class="card">
-                <h3>Pricing Calculator</h3>
-                <p>Find the right price to cover costs, overheads, and achieve your profit goals.</p>
-                <a href="pricing-calculator.html" class="btn-link">Set Your Price &rarr;</a>
-            </div>
-            <div class="card">
-                <h3>Break-Even Calculator</h3>
-                <p>Find out exactly how many units you need to sell to cover all your costs.</p>
-                <a href="break-even-calculator.html" class="btn-link">Find Break-Even &rarr;</a>
-            </div>
+        <!-- ===== GUIDES ===== -->
+        <div class="section-header">
+            <div class="section-eyebrow">Learning Resources</div>
+            <h2>Business Finance Guides</h2>
+            <p>Practical, jargon-free articles to help you understand the concepts behind the numbers.</p>
         </div>
-
-        <h2>Growth & Marketing</h2>
         <div class="grid">
-            <div class="card">
-                <h3>CAC Calculator</h3>
-                <p>Calculate your Customer Acquisition Cost to optimize your marketing spend.</p>
-                <a href="cac-calculator.html" class="btn-link">Calculate CAC &rarr;</a>
+            <div class="guide-card">
+                <div class="guide-card-tag">Pricing</div>
+                <h3><a href="guides/profit-margin-vs-markup.html">Profit Margin vs. Markup: What's the Difference?</a></h3>
+                <p>Two of the most confused terms in business pricing — and confusing them can cost you thousands. This guide explains both clearly with worked examples.</p>
+                <a href="guides/profit-margin-vs-markup.html" class="btn-link">Read Guide →</a>
             </div>
-            <div class="card">
-                <h3>LTV Calculator</h3>
-                <p>Estimate the Lifetime Value of a customer to understand long-term profitability.</p>
-                <a href="ltv-calculator.html" class="btn-link">Calculate LTV &rarr;</a>
+            <div class="guide-card">
+                <div class="guide-card-tag">Break-Even</div>
+                <h3><a href="guides/how-to-calculate-break-even.html">How to Calculate Your Break-Even Point</a></h3>
+                <p>A step-by-step walkthrough of break-even analysis — what it is, how to calculate it, and how to use it to set realistic sales targets.</p>
+                <a href="guides/how-to-calculate-break-even.html" class="btn-link">Read Guide →</a>
             </div>
-            <div class="card">
-                <h3>Churn Impact Calculator</h3>
-                <p> visualize how user churn affects your growth over time with a 12-month projection.</p>
-                <a href="churn-impact-calculator.html" class="btn-link">Analyze Churn &rarr;</a>
+            <div class="guide-card">
+                <div class="guide-card-tag">Growth Metrics</div>
+                <h3><a href="guides/what-is-cac.html">What Is Customer Acquisition Cost (CAC)?</a></h3>
+                <p>CAC is one of the most important metrics for any business that spends on marketing. Learn how to calculate it correctly and what a healthy LTV:CAC ratio looks like.</p>
+                <a href="guides/what-is-cac.html" class="btn-link">Read Guide →</a>
+            </div>
+            <div class="guide-card">
+                <div class="guide-card-tag">Investment</div>
+                <h3><a href="guides/how-to-estimate-roi.html">How to Estimate ROI Before You Spend</a></h3>
+                <p>Most businesses calculate ROI after the fact. This guide shows you how to build a pre-investment ROI estimate so you can make smarter spending decisions.</p>
+                <a href="guides/how-to-estimate-roi.html" class="btn-link">Read Guide →</a>
+            </div>
+            <div class="guide-card">
+                <div class="guide-card-tag">Pricing</div>
+                <h3><a href="guides/common-pricing-mistakes.html">5 Common Pricing Mistakes Small Businesses Make</a></h3>
+                <p>Pricing mistakes are among the most costly errors a small business can make — and many are invisible until it's too late. Learn the five most common ones and how to avoid them.</p>
+                <a href="guides/common-pricing-mistakes.html" class="btn-link">Read Guide →</a>
             </div>
         </div>
+        <p style="text-align:center;margin-top:-16px;margin-bottom:48px;">
+            <a href="guides/index.html" class="btn btn-outline">View all guides →</a>
+        </p>
 
-        <h2>Investment & Returns</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>ROI Calculator</h3>
-                <p>Measure the Return on Investment for any business expense or campaign.</p>
-                <a href="roi-calculator.html" class="btn-link">Calculate ROI &rarr;</a>
-            </div>
-            <div class="card">
-                <h3>Payback Period Calculator</h3>
-                <p>Determine how many months it will take to recover your initial investment.</p>
-                <a href="payback-period-calculator.html" class="btn-link">Calculate Payback &rarr;</a>
-            </div>
+        <!-- ===== HOW TO USE ===== -->
+        <div class="how-to-section">
+            <div class="section-eyebrow">Getting Started</div>
+            <h2>How to Use These Calculators</h2>
+            <p>Every calculator on Business Calculator Hub is designed to be used in under two minutes. Here's how to get the most out of them:</p>
+            <ol>
+                <li><strong>Choose the right calculator</strong> for your question. The category headings above group them by use case.</li>
+                <li><strong>Enter your real numbers.</strong> The quality of the result depends entirely on the accuracy of your inputs. Use actual figures from your accounts where possible.</li>
+                <li><strong>Read the explanation sections</strong> below each calculator. They explain what the result means, how to interpret it, and what to do next.</li>
+                <li><strong>Use the related calculators</strong> linked at the bottom of each page. Many metrics are most useful when compared — for example, CAC is most meaningful when compared to LTV.</li>
+                <li><strong>Share or copy your results</strong> using the buttons in the result box. Useful for sharing with a co-founder, accountant, or investor.</li>
+            </ol>
+        </div>
+
+        <!-- ===== WHY ACCURATE CALCULATIONS MATTER ===== -->
+        <div class="why-section">
+            <div class="section-eyebrow">Why It Matters</div>
+            <h2>Why Accurate Business Calculations Matter</h2>
+            <p>Many small businesses fail not because of a bad product or poor service, but because of poor financial visibility. When you don't know your true profit margin, you can't price correctly. When you don't know your break-even point, you can't set a realistic sales target. When you don't know your CAC and LTV, you can't make rational decisions about marketing spend.</p>
+            <p>The calculators on this site are built around standard, widely accepted financial formulas used by accountants, investors, and business analysts. They won't replace a qualified accountant for complex decisions, but they give you the financial literacy to ask the right questions, spot problems early, and make better day-to-day decisions.</p>
+            <p>Every number you understand about your business is a decision you can make with confidence rather than guesswork.</p>
         </div>
 
     </main>
 
+    <!-- ===== FOOTER ===== -->
     <footer>
         <div class="container">
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Use</a>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="margin-bottom:16px;display:inline-flex;">
+                        <span class="logo-icon">
+                            <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="1" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.9"/>
+                                <rect x="11" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                                <rect x="1" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                                <rect x="11" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.5"/>
+                            </svg>
+                        </span>
+                        <span>
+                            <span class="logo-name">Business Calculator Hub</span>
+                            <span class="logo-sub">Free Finance Tools</span>
+                        </span>
+                    </a>
+                    <p>Free, accurate business calculators for entrepreneurs and small business owners. No sign-up. No cost. Ever.</p>
+                </div>
+                <div class="footer-nav">
+                    <div class="footer-col">
+                        <h4>Calculators</h4>
+                        <a href="profit-margin-calculator.html">Profit Margin</a>
+                        <a href="markup-calculator.html">Markup</a>
+                        <a href="pricing-calculator.html">Pricing</a>
+                        <a href="break-even-calculator.html">Break-Even</a>
+                        <a href="cac-calculator.html">CAC</a>
+                        <a href="ltv-calculator.html">LTV</a>
+                        <a href="roi-calculator.html">ROI</a>
+                        <a href="payback-period-calculator.html">Payback Period</a>
+                        <a href="churn-impact-calculator.html">Churn Impact</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <a href="guides/index.html">All Guides</a>
+                        <a href="guides/profit-margin-vs-markup.html">Margin vs Markup</a>
+                        <a href="guides/how-to-calculate-break-even.html">Break-Even Guide</a>
+                        <a href="guides/what-is-cac.html">What Is CAC?</a>
+                        <a href="guides/how-to-estimate-roi.html">Estimating ROI</a>
+                        <a href="guides/common-pricing-mistakes.html">Pricing Mistakes</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <a href="about.html">About</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Use</a>
+                        <a href="disclaimer.html">Disclaimer</a>
+                    </div>
+                </div>
             </div>
-            <p>&copy; <span id="current-year">2026</span> Business Calculator Hub. All rights reserved.</p>
-            <p style="font-size: 0.8rem; color: #666;">Last updated: <span id="last-updated">January 30, 2026</span></p>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2026</span> Business Calculator Hub. All rights reserved.</p>
+                <p>For informational purposes only. Not professional financial advice.</p>
+            </div>
         </div>
     </footer>
 

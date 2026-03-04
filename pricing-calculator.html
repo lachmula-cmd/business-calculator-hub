@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Pricing Calculator - Business Calculator Hub</title>
-    <meta name="description"
-        content="Calculate the optimal selling price for your product including overhead coverage and desired profit margin.">
+    <title>Product Pricing Calculator — Find the Right Selling Price | Business Calculator Hub</title>
+    <meta name="description" content="Calculate the optimal selling price for your product. Enter your unit cost, monthly overhead, expected sales volume, and target profit margin to get a recommended price that covers everything.">
     <link rel="stylesheet" href="assets/styles.css">
-    <!-- ADSENSE PLACEHOLDER: Paste your script here -->
+    <link rel="stylesheet" href="assets/styles-extra.css">
+    <!-- ADSENSE PLACEHOLDER: Paste your AdSense script tag here -->
 </head>
-
 <body>
     <header>
         <div class="container nav-flex">
-            <a href="index.html" class="logo">📊 Business Calculator Hub</a>
-            <nav class="footer-links" style="margin-bottom: 0;">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">
+                    <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="1" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.9"/>
+                        <rect x="11" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                        <rect x="1" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                        <rect x="11" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.5"/>
+                    </svg>
+                </span>
+                <span>
+                    <span class="logo-name">Business Calculator Hub</span>
+                    <span class="logo-sub">Free Finance Tools</span>
+                </span>
+            </a>
+            <nav class="nav-links">
+                <a href="guides/index.html">Guides</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
             </nav>
@@ -24,7 +36,7 @@
 
     <main class="container">
         <h1>Pricing Calculator</h1>
-        <p>Determine the right price to cover all costs (COGS + Overhead) and hit your profit goals.</p>
+        <p class="page-intro">Setting the right price is one of the most critical decisions in business. Price too low and you lose money — often without realising it, because overhead gets forgotten. Price too high and you lose customers. This calculator helps you find the minimum viable price that covers your direct costs <em>and</em> your overhead, then adds your target profit margin on top. The result is a data-driven starting point for your pricing strategy.</p>
 
         <div class="calculator-wrapper">
             <div class="form-group">
@@ -40,24 +52,26 @@
 
             <div class="form-group">
                 <label for="unit-cost">Unit Cost (COGS)</label>
-                <input type="number" id="unit-cost" placeholder="Direct material & labor cost per item" min="0">
+                <input type="number" id="unit-cost" placeholder="e.g., 20" min="0">
+                <small class="help-text">Direct cost to produce or acquire one unit — materials, labour, packaging, and other direct costs.</small>
             </div>
 
             <div class="form-group">
                 <label for="overhead">Monthly Overhead</label>
-                <input type="number" id="overhead" placeholder="Fixed costs (Rent, Salaries, Software)" min="0">
+                <input type="number" id="overhead" placeholder="e.g., 2000" min="0">
+                <small class="help-text">Total fixed monthly expenses — rent, salaries, software subscriptions, utilities, insurance, etc.</small>
             </div>
 
             <div class="form-group">
                 <label for="expected-units">Expected Units Sold per Month</label>
                 <input type="number" id="expected-units" placeholder="e.g., 100" min="1">
-                <small class="help-text">Used to distribute overhead costs per unit.</small>
+                <small class="help-text">Your realistic estimate of monthly sales volume. Used to distribute overhead cost across each unit.</small>
             </div>
 
             <div class="form-group">
                 <label for="margin">Desired Profit Margin (%)</label>
                 <input type="number" id="margin" placeholder="e.g., 30" min="0" max="99.9">
-                <small class="help-text">How much profit you want to make on each sale (0-99%).</small>
+                <small class="help-text">The percentage of the final selling price that should be profit. Enter 30 for 30%.</small>
             </div>
 
             <div class="btn-group">
@@ -65,24 +79,21 @@
                 <button id="share-btn" class="btn btn-secondary">Share this Calculator</button>
             </div>
 
-            <div id="error-msg"
-                style="display:none; color: #dc3545; background: #ffe6e6; padding: 10px; border-radius: 4px; margin-bottom: 15px;">
-            </div>
+            <div id="error-msg" style="display:none; color: #dc3545; background: #ffe6e6; padding: 10px; border-radius: 4px; margin-bottom: 15px;"></div>
 
             <div class="result-box">
-                <div class="result-title">Recommended Price</div>
+                <div class="result-title">Recommended Selling Price</div>
                 <div class="result-value" id="result-price">-</div>
 
                 <div style="margin-top: 20px; font-size: 0.9rem; color: #555; text-align: left;">
-                    <div><strong>Breakdown:</strong></div>
-                    <div style="display: flex; justify-content: space-between; margin-top: 5px;">
-                        <span>Unit Cost:</span> <span id="detail-unit-cost">-</span>
+                    <div><strong>Price Breakdown:</strong></div>
+                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                        <span>Unit Cost (COGS):</span> <span id="detail-unit-cost">-</span>
                     </div>
-                    <div style="display: flex; justify-content: space-between;">
+                    <div style="display: flex; justify-content: space-between; margin-top: 4px;">
                         <span>Overhead per Unit:</span> <span id="detail-overhead">-</span>
                     </div>
-                    <div
-                        style="display: flex; justify-content: space-between; border-top: 1px solid #ddd; padding-top: 2px; margin-top: 2px;">
+                    <div style="display: flex; justify-content: space-between; border-top: 1px solid #ddd; padding-top: 6px; margin-top: 6px; font-weight: 600;">
                         <span>Total Cost per Unit:</span> <span id="detail-total-cost">-</span>
                     </div>
                 </div>
@@ -91,60 +102,202 @@
             </div>
         </div>
 
+        <!-- Ad Unit -->
         <div class="ad-placeholder">
-            <!-- ADSENSE PLACEHOLDER: MIDDLE BANNER -->
-            Advertisement
+            <!-- ADSENSE PLACEHOLDER: MIDDLE BANNER AD UNIT -->
         </div>
 
         <section>
-            <h2>How to use</h2>
+            <h2>What This Calculator Does</h2>
+            <p>Most basic pricing calculators only account for the direct cost of a product. This one goes further by incorporating your overhead — the fixed monthly costs that exist regardless of how many units you sell. Forgetting overhead is one of the most common reasons small businesses underprice their products and end up working hard for little or no profit.</p>
+            <p>The calculator distributes your total monthly overhead across your expected unit sales to find the overhead cost per unit. It then adds this to your direct unit cost to get the true total cost per unit. Finally, it applies your desired profit margin to arrive at the recommended selling price.</p>
+        </section>
+
+        <section>
+            <h2>How It Works</h2>
+            <ol>
+                <li><strong>Unit Cost (COGS):</strong> Enter the direct cost to produce or acquire one unit. This includes raw materials, direct labour, packaging, and any other costs that vary directly with production volume.</li>
+                <li><strong>Monthly Overhead:</strong> Enter your total fixed monthly costs — rent, salaries, utilities, software, insurance, and any other expenses that you pay regardless of how many units you sell.</li>
+                <li><strong>Expected Units per Month:</strong> Enter a realistic estimate of how many units you expect to sell each month. Be conservative — using an optimistic number will make your price look lower than it needs to be.</li>
+                <li><strong>Desired Profit Margin:</strong> Enter the percentage of the final selling price that you want to be profit. For example, entering 30 means 30% of the selling price will be profit.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Formula</h2>
+            <div class="formula-box">
+                <strong>Step 1 — Overhead per Unit</strong>
+                Overhead per Unit = Monthly Overhead ÷ Expected Units Sold per Month
+            </div>
+            <div class="formula-box">
+                <strong>Step 2 — Total Cost per Unit</strong>
+                Total Cost per Unit = Unit Cost (COGS) + Overhead per Unit
+            </div>
+            <div class="formula-box">
+                <strong>Step 3 — Recommended Selling Price</strong>
+                Price = Total Cost per Unit ÷ (1 − Desired Margin %)
+            </div>
+        </section>
+
+        <section>
+            <h2>Example Calculation</h2>
+            <div class="example-box">
+                <strong>Worked Example</strong>
+                <p>You make and sell handmade candles. Your direct cost per candle (wax, wick, jar, label) is <strong>$8</strong>. Your monthly overhead (studio rent, website, packaging supplies) is <strong>$1,200</strong>. You expect to sell <strong>150 candles</strong> per month. You want a <strong>35% profit margin</strong>.</p>
+                <p>Overhead per Unit = $1,200 ÷ 150 = <strong>$8.00</strong></p>
+                <p>Total Cost per Unit = $8 + $8 = <strong>$16.00</strong></p>
+                <p>Recommended Price = $16 ÷ (1 − 0.35) = $16 ÷ 0.65 = <strong>$24.62</strong></p>
+                <p>At $24.62 per candle, you cover all costs and achieve a 35% profit margin. Selling below this price means you're not covering your overhead.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>When to Use This Calculator</h2>
             <ul>
-                <li><strong>Unit Cost:</strong> Direct cost to make one product.</li>
-                <li><strong>Overhead:</strong> Total fixed monthly expenses.</li>
-                <li><strong>Expected Units:</strong> Conservative estimate of monthly sales volume.</li>
-                <li><strong>Desired Margin:</strong> The percentage of the final price that should be pure profit.</li>
+                <li><strong>When launching a new product</strong> — before you set a price, make sure it covers everything</li>
+                <li><strong>When your costs have changed</strong> — if rent, materials, or labour costs have increased, recalculate to see whether your current price is still viable</li>
+                <li><strong>When reviewing your product range</strong> — identify which products are priced correctly and which may be underpriced</li>
+                <li><strong>When entering a new market</strong> — if you're selling in a new channel (e.g., wholesale vs. direct-to-consumer), the overhead allocation may be different</li>
+                <li><strong>When your sales volume changes significantly</strong> — if you sell far fewer units than expected, your overhead per unit increases, which may require a price adjustment</li>
             </ul>
         </section>
 
         <section>
-            <h2>Theory</h2>
-            <p>This calculator ensures you don't underprice by forgetting overheads. It calculates the "Total Cost per
-                Unit" first, then applies the margin formula.</p>
-            <p><code>Price = TotalCostPerUnit / (1 - Margin%)</code></p>
+            <h2>Common Mistakes</h2>
+            <ul>
+                <li><strong>Forgetting overhead entirely.</strong> Many business owners only think about the cost of materials when pricing. If you don't include overhead, you may be selling at a loss without knowing it.</li>
+                <li><strong>Using an overly optimistic sales volume.</strong> If you enter 500 units/month but only sell 200, your overhead per unit is 2.5x higher than you calculated, and your actual margin will be far lower than expected.</li>
+                <li><strong>Confusing margin with markup.</strong> A 30% margin is not the same as a 30% markup. The formula used here (Price = Cost ÷ (1 − Margin%)) correctly calculates a margin-based price. If you use a simple markup formula instead, you'll underprice.</li>
+                <li><strong>Not updating the calculation when costs change.</strong> Pricing should be reviewed regularly — at least annually, or whenever there's a significant change in costs or sales volume.</li>
+                <li><strong>Treating the result as the final price.</strong> The recommended price is the floor — the minimum you should charge. You may be able to charge more based on market demand, competitor pricing, and perceived value.</li>
+            </ul>
         </section>
 
-        <section style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
+        <section>
+            <h2>How to Interpret Your Result</h2>
+            <p>The recommended price is the <strong>minimum price</strong> at which you cover all costs and achieve your target margin. Think of it as your floor, not your ceiling.</p>
+            <p>In practice, your final price will also be influenced by:</p>
+            <ul>
+                <li><strong>Competitor pricing</strong> — if the market price is lower than your calculated floor, you need to reduce costs, not just lower your price</li>
+                <li><strong>Perceived value</strong> — premium positioning can justify prices well above the calculated floor</li>
+                <li><strong>Price psychology</strong> — prices ending in .99 or .95 often perform better than round numbers</li>
+                <li><strong>Channel margins</strong> — if you sell through retailers or distributors, they will take a margin, so your wholesale price needs to be set accordingly</li>
+            </ul>
+            <p>Use the <a href="profit-margin-calculator.html">Profit Margin Calculator</a> to verify the actual margin at your final chosen price.</p>
+        </section>
+
+        <section>
+            <h2>Frequently Asked Questions</h2>
+
+            <h3>What should I include in "overhead"?</h3>
+            <p>Overhead includes all fixed costs that you pay regardless of how many units you sell: rent, salaries (including your own if you pay yourself), utilities, insurance, software subscriptions, website hosting, marketing budgets, and any other recurring business expenses. Do not include the direct cost of materials or production — those go in the "Unit Cost" field.</p>
+
+            <h3>What if my sales volume varies month to month?</h3>
+            <p>Use a conservative estimate — your average monthly sales or your expected minimum, not your best month. If you use an optimistic number and sales fall short, your overhead per unit will be higher than calculated and your actual margin will be lower. It's better to price for a realistic scenario and be pleasantly surprised than to underprice and struggle.</p>
+
+            <h3>Why does the formula use (1 − Margin%) instead of just adding a percentage?</h3>
+            <p>Because profit margin is expressed as a percentage of the selling price, not the cost. If you simply add 30% to your cost, you get a 30% markup — which is only a 23% margin. The formula Price = Cost ÷ (1 − 0.30) correctly ensures that 30% of the final price is profit.</p>
+
+            <h3>What if the recommended price is higher than what the market will bear?</h3>
+            <p>This is an important signal. It means your cost structure may not be viable at current market prices. Your options are: reduce unit costs (negotiate with suppliers, improve efficiency), reduce overhead (cut fixed costs), increase sales volume (to spread overhead more thinly), or accept a lower margin. Pricing below your calculated floor is not a sustainable strategy.</p>
+
+            <h3>How does this differ from the Markup Calculator?</h3>
+            <p>The <a href="markup-calculator.html">Markup Calculator</a> tells you the markup percentage you're currently applying to a known cost and price. This Pricing Calculator works forward from your costs to recommend a price. It also incorporates overhead, which the basic markup calculator does not.</p>
+        </section>
+
+        <p class="disclaimer-note">Disclaimer: This calculator provides estimates for informational purposes only. The recommended price is a mathematical floor based on your inputs. Actual pricing decisions should consider market conditions, competition, and other factors. Consult a qualified business advisor for comprehensive pricing strategy advice.</p>
+
+        <hr class="section-divider">
+
+        <section>
             <h3>Related Calculators</h3>
             <div class="grid">
                 <div class="card">
                     <h3>Markup Calculator</h3>
-                    <p>Simple cost to price markup.</p>
-                    <a href="markup-calculator.html" class="btn-link">Go &rarr;</a>
+                    <p>Calculate the markup percentage you're applying to your products and understand how it relates to margin.</p>
+                    <a href="markup-calculator.html" class="btn-link">Calculate Markup &rarr;</a>
                 </div>
                 <div class="card">
                     <h3>Profit Margin Calculator</h3>
-                    <p>Verify your final margins.</p>
-                    <a href="profit-margin-calculator.html" class="btn-link">Go &rarr;</a>
+                    <p>Verify the actual profit margin at your final chosen selling price.</p>
+                    <a href="profit-margin-calculator.html" class="btn-link">Check Your Margin &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>Break-Even Calculator</h3>
+                    <p>Find out how many units you need to sell at your chosen price to cover all costs.</p>
+                    <a href="break-even-calculator.html" class="btn-link">Find Break-Even &rarr;</a>
                 </div>
             </div>
         </section>
 
+        <section>
+            <h3>Related Guides</h3>
+            <ul>
+                <li><a href="guides/common-pricing-mistakes.html">5 Common Pricing Mistakes Small Businesses Make</a></li>
+                <li><a href="guides/profit-margin-vs-markup.html">Profit Margin vs. Markup: What's the Difference?</a></li>
+            </ul>
+        </section>
     </main>
 
     <footer>
         <div class="container">
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Use</a>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="margin-bottom:16px;display:inline-flex;">
+                        <span class="logo-icon">
+                            <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="1" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.9"/>
+                                <rect x="11" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                                <rect x="1" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.7"/>
+                                <rect x="11" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.5"/>
+                            </svg>
+                        </span>
+                        <span>
+                            <span class="logo-name">Business Calculator Hub</span>
+                            <span class="logo-sub">Free Finance Tools</span>
+                        </span>
+                    </a>
+                    <p>Free, accurate business calculators for entrepreneurs and small business owners.</p>
+                </div>
+                <div class="footer-nav">
+                    <div class="footer-col">
+                        <h4>Calculators</h4>
+                        <a href="profit-margin-calculator.html">Profit Margin</a>
+                        <a href="markup-calculator.html">Markup</a>
+                        <a href="pricing-calculator.html">Pricing</a>
+                        <a href="break-even-calculator.html">Break-Even</a>
+                        <a href="cac-calculator.html">CAC</a>
+                        <a href="ltv-calculator.html">LTV</a>
+                        <a href="roi-calculator.html">ROI</a>
+                        <a href="payback-period-calculator.html">Payback Period</a>
+                        <a href="churn-impact-calculator.html">Churn Impact</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <a href="guides/index.html">All Guides</a>
+                        <a href="guides/profit-margin-vs-markup.html">Margin vs Markup</a>
+                        <a href="guides/how-to-calculate-break-even.html">Break-Even Guide</a>
+                        <a href="guides/what-is-cac.html">What Is CAC?</a>
+                        <a href="guides/how-to-estimate-roi.html">Estimating ROI</a>
+                        <a href="guides/common-pricing-mistakes.html">Pricing Mistakes</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <a href="about.html">About</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Use</a>
+                        <a href="disclaimer.html">Disclaimer</a>
+                    </div>
+                </div>
             </div>
-            <p>&copy; <span id="current-year">2026</span> Business Calculator Hub. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2026</span> Business Calculator Hub. All rights reserved.</p>
+                <p>For informational purposes only. Not professional financial advice.</p>
+            </div>
         </div>
     </footer>
     <script src="assets/utils.js"></script>
     <script src="assets/calc-pricing.js"></script>
 </body>
-
 </html>
